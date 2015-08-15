@@ -39,35 +39,84 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.lineOneTextField.delegate = self
+        self.lineTwoTextField.delegate = self
+        self.lineThreeTextField.delegate = self
         
     }
     
-    func textFieldShouldReturn(lineOneTextField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         
+        if textField == self.lineOneTextField {
+            
+            if lineOneTextField.text!.isEmpty {
+                
+                let alert = UIAlertView()
+                alert.title = "Oops"
+                alert.message = "Please Enter Text In The Box"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+            else {
+                lineOneLabel.hidden = false
+                lineOneLabel.text = lineOneTextField.text
+                lineOneTextField.hidden = true
+                lineTwoTextField.hidden = false
+                lineOneTextField.resignFirstResponder()
+                //return true
+                }
+            }
+        
+        if textField == self.lineTwoTextField {
+            
+            if lineTwoTextField.text!.isEmpty {
+                
+                let alert = UIAlertView()
+                alert.title = "Oops"
+                alert.message = "Please Enter Text In The Box"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+            else {
+                lineTwoLabel.hidden = false
+                lineTwoLabel.text = lineTwoTextField.text
+                lineTwoTextField.hidden = true
+                lineThreeTextField.hidden = false
+                lineTwoTextField.resignFirstResponder()
+                //return true
+                }
+            }
+        
+        if textField == self.lineThreeTextField {
+            
+            if lineThreeTextField.text!.isEmpty {
+                
+                let alert = UIAlertView()
+                alert.title = "Oops"
+                alert.message = "Please Enter Text In The Box"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+            else {
+                lineThreeLabel.hidden = false
+                lineThreeLabel.text = lineThreeTextField.text
+                lineThreeTextField.hidden = true
+                renderButton.hidden = false
+                lineThreeTextField.resignFirstResponder()
+                //return true
+            }
+        }
         //textField code
         
-        lineOneLabel.hidden = false
-        lineOneLabel.text = lineOneTextField.text
-        lineOneTextField.hidden = true
-        lineTwoTextField.hidden = false
-
-        lineOneTextField.resignFirstResponder()  //if desired
-        performAction()
+        //if desired
+        //performAction()
         return true
     }
     
-    func performAction() {
+    //func performAction() {
 // Not sure how to get 2nd and 3rd textfields to behave like 1st
         
         //action events
-//        if lineOneTextField.text!.isEmpty {
-//            
-//            let alert = UIAlertView()
-//            alert.title = "Oops"
-//            alert.message = "Please Enter Text In The Box"
-//            alert.addButtonWithTitle("Ok")
-//            alert.show()
-//        }
+    
 //        else {
         
 //            lineOneLabel.hidden = false
@@ -75,7 +124,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //            lineOneTextField.hidden = true
 //            lineTwoTextField.hidden = false
             //lineOneTextField.resignFirstResponder()
-        }
+        //}
         
 //        func lineTwoTextFieldShouldReturn(lineTwoTextField: UITextField) -> Bool {
 //            
@@ -98,12 +147,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //            alert.show()
 //        }
 //        else {
-//            lineTwoLabel.hidden = false
-//            lineTwoLabel.text = lineTwoTextField.text
-//            lineTwoTextField.hidden = true
-//            lineThreeTextField.hidden = false
-//            lineTwoTextField.resignFirstResponder()
-//        }
+            //        }
 //            
 //            func lineThreeTextFieldShouldReturn(lineThreeTextField: UITextField) -> Bool {
 //                
@@ -127,12 +171,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        }
 //        else {
 //            
-//            lineThreeLabel.hidden = false
-//            lineThreeLabel.text = lineThreeTextField.text
-//            lineThreeTextField.hidden = true
-//            renderButton.hidden = false
-//            lineThreeTextField.resignFirstResponder()
-//        }
+            //        }
 //
 //
 //
