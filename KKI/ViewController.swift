@@ -57,6 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func performAction() {
+// Not sure how to get 2nd and 3rd textfields to behave like 1st
         
         //action events
 //        if lineOneTextField.text!.isEmpty {
