@@ -44,6 +44,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String) -> Bool
+    {
+        let maxLength = 12
+        let currentString: NSString = textField.text!
+        let newString: NSString =
+        currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         if textField == self.lineOneTextField {
@@ -194,7 +204,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     @IBAction func renderButtonPressed(sender: UIButton) {
         
-        keyImageView.image = UIImage(named: "s5Rend")
+        keyImageView.image = UIImage(named: "s5Rend1")
         lineOneLabel.textColor = renderedTextColor
         lineTwoLabel.textColor = renderedTextColor
         lineThreeLabel.textColor = renderedTextColor
