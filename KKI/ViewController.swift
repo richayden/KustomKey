@@ -61,12 +61,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 lineOneLabel.text = lineOneTextField.text
                 lineOneTextField.hidden = true
                 lineTwoTextField.hidden = false
+                lineTwoTextField.enablesReturnKeyAutomatically = false
                 lineOneTextField.resignFirstResponder()
                 //return true
                 }
             }
         
         if textField == self.lineTwoTextField {
+       
+
             
             if lineTwoTextField.text!.isEmpty {
                 
@@ -81,6 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 lineTwoLabel.text = lineTwoTextField.text
                 lineTwoTextField.hidden = true
                 lineThreeTextField.hidden = false
+                lineThreeTextField.enablesReturnKeyAutomatically = false
                 lineTwoTextField.resignFirstResponder()
                 //return true
                 }
@@ -109,7 +113,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //if desired
         //performAction()
+        
         return true
+        
     }
     
     //func performAction() {
