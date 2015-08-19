@@ -34,6 +34,15 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CaeciliaLTStd Light.otf</string>
+		<string>CaeciliaLTStd Heavy.otf</string>
+		<string>AvenirLTStd-Black.otf</string>
+		<string>AvenirLTStd-BlackOblique.otf</string>
+		<string>AvenirLTStd-Light.otf</string>
+		<string>AvenirLTStd-LightOblique.otf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

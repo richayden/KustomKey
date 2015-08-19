@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B116E0D1B83DEB50089E195 /* CaeciliaLTStd Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B116E0C1B83DEB40089E195 /* CaeciliaLTStd Light.otf */; };
 		9B36B5D61B7D60ED008298FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B36B5D51B7D60ED008298FE /* AppDelegate.swift */; };
 		9B36B5D81B7D60EE008298FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B36B5D71B7D60EE008298FE /* ViewController.swift */; };
 		9B36B5DB1B7D60EE008298FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5D91B7D60EE008298FE /* Main.storyboard */; };
 		9B36B5DD1B7D60EE008298FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DC1B7D60EE008298FE /* Assets.xcassets */; };
 		9B36B5E01B7D60EE008298FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DE1B7D60EE008298FE /* LaunchScreen.storyboard */; };
+		9B4FBD281B84F96500D9C8E0 /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */; };
+		9B4FBD2A1B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD291B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf */; };
+		9B4FBD2C1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */; };
+		9B4FBD2E1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2D1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf */; };
+		9B4FBD301B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */; };
+		9B842A2B1B815FE600502173 /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B842A2A1B815FE600502173 /* key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B116E0C1B83DEB40089E195 /* CaeciliaLTStd Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaeciliaLTStd Light.otf"; sourceTree = "<group>"; };
 		9B36B5D21B7D60ED008298FE /* KKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B36B5D51B7D60ED008298FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B36B5D71B7D60EE008298FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,12 @@
 		9B36B5DC1B7D60EE008298FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B36B5DF1B7D60EE008298FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B36B5E11B7D60EE008298FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		9B4FBD291B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-BlackOblique.otf"; sourceTree = "<group>"; };
+		9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
+		9B4FBD2D1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-LightOblique.otf"; sourceTree = "<group>"; };
+		9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaeciliaLTStd Heavy.otf"; sourceTree = "<group>"; };
+		9B842A2A1B815FE600502173 /* key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +71,16 @@
 				9B36B5D51B7D60ED008298FE /* AppDelegate.swift */,
 				9B36B5D71B7D60EE008298FE /* ViewController.swift */,
 				9B36B5D91B7D60EE008298FE /* Main.storyboard */,
+				9B842A2A1B815FE600502173 /* key.swift */,
 				9B36B5DC1B7D60EE008298FE /* Assets.xcassets */,
 				9B36B5DE1B7D60EE008298FE /* LaunchScreen.storyboard */,
 				9B36B5E11B7D60EE008298FE /* Info.plist */,
+				9B116E0C1B83DEB40089E195 /* CaeciliaLTStd Light.otf */,
+				9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */,
+				9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */,
+				9B4FBD291B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf */,
+				9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */,
+				9B4FBD2D1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf */,
 			);
 			path = KKI;
 			sourceTree = "<group>";
@@ -121,8 +142,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B116E0D1B83DEB50089E195 /* CaeciliaLTStd Light.otf in Resources */,
+				9B4FBD2E1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf in Resources */,
+				9B4FBD301B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf in Resources */,
+				9B4FBD2C1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf in Resources */,
 				9B36B5E01B7D60EE008298FE /* LaunchScreen.storyboard in Resources */,
+				9B4FBD2A1B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf in Resources */,
 				9B36B5DD1B7D60EE008298FE /* Assets.xcassets in Resources */,
+				9B4FBD281B84F96500D9C8E0 /* AvenirLTStd-Black.otf in Resources */,
 				9B36B5DB1B7D60EE008298FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B36B5D81B7D60EE008298FE /* ViewController.swift in Sources */,
+				9B842A2B1B815FE600502173 /* key.swift in Sources */,
 				9B36B5D61B7D60ED008298FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
