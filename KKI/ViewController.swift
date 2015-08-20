@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lineThreeTextField: UITextField!
     
     @IBOutlet weak var RButton: UIButton!
-    
     @IBOutlet weak var LButton: UIButton!
     
     @IBOutlet weak var renderButton: UIButton!
@@ -76,29 +75,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                
-                    //lineOneLabel.font = UIFont(name: "CaeciliaLTStd-Light", size: 30)
-                    lineOneLabel.text = lineOneTextField.text
-                    lineOneLabel.textAlignment = NSTextAlignment.Center
-                    //self.view.addSubview(lineOneLabel)
+                lineOneLabel.text = lineOneTextField.text
+                lineOneLabel.textAlignment = NSTextAlignment.Center
 
-                //}
-                
-                //if keyImageView.image == UIImage(named: "styleW3") {
-                    
-//                    let lineOneLabel = UILabel(frame: CGRectMake(self.view.bounds.width / 2 - 85, self.view.bounds.height / 2 - 100, 170, 30))
-//                    lineOneLabel.font = UIFont(name: "CaeciliaLTStd-Light", size: 30)
-//                    lineOneLabel.text = lineOneTextField.text
-//                    lineOneLabel.textAlignment = NSTextAlignment.Center
-//                    self.view.addSubview(lineOneLabel)
-                
-                //}
-                
-                
-                
-                //label.font = UIFont(name: label.font.fontName, size: 20)
                 lineOneLabel.hidden = false
-                //lineOneLabel.font = UIFont(name: "CaeciliaLTStd-Light", size: 30)
-                //lineOneLabel.center = CGPoint(x: x, y: 177)
                 lineOneLabel.text = lineOneTextField.text
                 lineOneTextField.hidden = true
                 lineTwoTextField.hidden = false
@@ -110,9 +90,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         
         if textField == self.lineTwoTextField {
-       
-
-            
+        
             if lineTwoTextField.text!.isEmpty {
                 
                 let alert = UIAlertView()
@@ -130,7 +108,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 lineThreeTextField.enablesReturnKeyAutomatically = false
                 lineTwoTextField.resignFirstResponder()
                 self.lineThreeTextField.becomeFirstResponder()
-                //return true
                 }
             }
         
@@ -152,19 +129,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 RButton.hidden = false
                 LButton.hidden = false
                 lineThreeTextField.resignFirstResponder()
-                //return true
             }
         }
             return true
-        
     }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-        
+
     }
         
     @IBAction func nextStyleButtonPressed(sender: UIButton) {
@@ -180,6 +153,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         if showPreview == true {
             keyImageView.image = UIImage(named: "styleR\(counter)")
+            if keyImageView.image == UIImage(named: "styleR7") {
+                lineOneLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                lineTwoLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                lineThreeLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                
+                lineOneLabel.shadowColor = renderedTextColor
+                lineTwoLabel.shadowColor = renderedTextColor
+                lineThreeLabel.shadowColor = renderedTextColor
+            }
+            else {
+                lineOneLabel.textColor = renderedTextColor
+                lineTwoLabel.textColor = renderedTextColor
+                lineThreeLabel.textColor = renderedTextColor
+                
+                lineOneLabel.shadowColor = UIColor.yellowColor()
+                lineTwoLabel.shadowColor = UIColor.yellowColor()
+                lineThreeLabel.shadowColor = UIColor.yellowColor()
+            }
+
         }
         else {
         keyImageView.image = UIImage(named: "styleW\(counter)")
@@ -190,7 +182,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if keyImageView.image == UIImage(named: "styleW1") || keyImageView.image == UIImage(named: "styleR1") {
             
             lineOneLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 175)
-        
             lineOneLabel.font = UIFont(name: "AvenirLTStd-Light", size: 22)
             
             lineTwoLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 217)
@@ -213,7 +204,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             lineThreeLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 238)
             lineThreeLabel.font = UIFont(name: "AvenirLTStd-Light", size: 20)
-            
         }
 
         // If kki style 4 (styleW3) is chosen this moves labels and sets font size
@@ -242,13 +232,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             lineThreeLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 231)
             lineThreeLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25)
-            //lineThreeLabel.font = lineThreeLabel.font.fontWithSize(25)
             
         }
         
         // If kki style 6 (styleW5) is chosen this moves labels and sets font size
         
-        if keyImageView.image == UIImage(named: "styleW5") || keyImageView.image == UIImage(named: "styleR5"){
+        if keyImageView.image == UIImage(named: "styleW5") || keyImageView.image == UIImage(named: "styleR5") {
             
             lineOneLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 180)
             lineOneLabel.font = UIFont(name: "AvenirLTStd-Light", size: 24)
@@ -280,47 +269,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if keyImageView.image == UIImage(named: "styleW7") || keyImageView.image == UIImage(named: "styleR7") {
             
             lineOneLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 177)
-            
             lineOneLabel.font = UIFont(name: "AvenirLTStd-Black", size: 24)
             
-            //lineOneLabel.font = lineOneLabel.font.fontWithSize(24)
-            
             lineTwoLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 202)
-            
             lineTwoLabel.font = UIFont(name: "AvenirLTStd-Black", size: 23)
             
-            //lineTwoLabel.font = lineTwoLabel.font.fontWithSize(18)
-            
             lineThreeLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 225)
-            
             lineThreeLabel.font = UIFont(name: "AvenirLTStd-Black", size: 21)
-            
-            //lineThreeLabel.font = lineThreeLabel.font.fontWithSize(20)
-            
         }
         print(showPreview)
-
-
-
-
-        
-        //keyImageView.image = UIImage(named: "s1Rend")
-//        lineOneLabel.textColor = renderedTextColor
-//        lineTwoLabel.textColor = renderedTextColor
-//        lineThreeLabel.textColor = renderedTextColor
-//        
-//        lineOneLabel.shadowColor = UIColor.yellowColor()
-//        lineTwoLabel.shadowColor = UIColor.yellowColor()
-//        lineThreeLabel.shadowColor = UIColor.yellowColor()
-//        
-//        renderButton.hidden = true
-//        orderButton.hidden = false
-//        startOverButton.hidden = false
-//        titleLabel.hidden = true
-
-        
     }
-
     
     @IBAction func backStyleButtonPressed(sender: UIButton) {
         
@@ -335,7 +293,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         if showPreview == true {
+            
             keyImageView.image = UIImage(named: "styleR\(counter)")
+            
+            if keyImageView.image == UIImage(named: "styleR7") {
+                
+                lineOneLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                lineTwoLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                lineThreeLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                
+                lineOneLabel.shadowColor = renderedTextColor
+                lineTwoLabel.shadowColor = renderedTextColor
+                lineThreeLabel.shadowColor = renderedTextColor
+            }
+            else {
+                
+                lineOneLabel.textColor = renderedTextColor
+                lineTwoLabel.textColor = renderedTextColor
+                lineThreeLabel.textColor = renderedTextColor
+                
+                lineOneLabel.shadowColor = UIColor.yellowColor()
+                lineTwoLabel.shadowColor = UIColor.yellowColor()
+                lineThreeLabel.shadowColor = UIColor.yellowColor()
+            }
         }
         else {
         
@@ -347,7 +327,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if keyImageView.image == UIImage(named: "styleW1") || keyImageView.image == UIImage(named: "styleR1") {
             
             lineOneLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 175)
-            
             lineOneLabel.font = UIFont(name: "AvenirLTStd-Light", size: 22)
             
             lineTwoLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 217)
@@ -399,7 +378,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             lineThreeLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 231)
             lineThreeLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25)
-            //lineThreeLabel.font = lineThreeLabel.font.fontWithSize(25)
             
         }
         
@@ -437,49 +415,63 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if keyImageView.image == UIImage(named: "styleW7") || keyImageView.image == UIImage(named: "styleR7") {
             
             lineOneLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 177)
-            
             lineOneLabel.font = UIFont(name: "AvenirLTStd-Black", size: 24)
             
-            //lineOneLabel.font = lineOneLabel.font.fontWithSize(24)
-            
             lineTwoLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 202)
-            
             lineTwoLabel.font = UIFont(name: "AvenirLTStd-Black", size: 23)
             
-            //lineTwoLabel.font = lineTwoLabel.font.fontWithSize(18)
-            
             lineThreeLabel.center = CGPoint(x: self.view.bounds.width / 2, y: 225)
-            
             lineThreeLabel.font = UIFont(name: "AvenirLTStd-Black", size: 21)
             
             //lineThreeLabel.font = lineThreeLabel.font.fontWithSize(20)
-            
         }
         print(showPreview)
-        
-        
     }
-    
-
 
     @IBAction func renderButtonPressed(sender: UIButton) {
         
-        showPreview = true
-        
-        keyImageView.image = UIImage(named: "styleR\(counter)")
-        //keyImageView.image = UIImage(named: "s1Rend")
-        lineOneLabel.textColor = renderedTextColor
-        lineTwoLabel.textColor = renderedTextColor
-        lineThreeLabel.textColor = renderedTextColor
-        
-        lineOneLabel.shadowColor = UIColor.yellowColor()
-        lineTwoLabel.shadowColor = UIColor.yellowColor()
-        lineThreeLabel.shadowColor = UIColor.yellowColor()
-        
-        renderButton.hidden = true
-        orderButton.hidden = false
-        startOverButton.hidden = false
-        titleLabel.hidden = true
+        if renderButton.currentTitle == "Preview Mode" {
+            
+            showPreview = true
+            
+            keyImageView.image = UIImage(named: "styleR\(counter)")
+            
+            lineOneLabel.textColor = renderedTextColor
+            lineTwoLabel.textColor = renderedTextColor
+            lineThreeLabel.textColor = renderedTextColor
+            
+            lineOneLabel.shadowColor = UIColor.yellowColor()
+            lineTwoLabel.shadowColor = UIColor.yellowColor()
+            lineThreeLabel.shadowColor = UIColor.yellowColor()
+            
+            //renderButton.hidden = true
+            //orderButton.hidden = false
+            //startOverButton.hidden = false
+            
+            renderButton.setTitle("Basic Mode", forState: UIControlState.Normal)
+            
+        }
+        else {
+            
+            if renderButton.currentTitle == "Basic Mode" {
+                showPreview = false
+                
+                keyImageView.image = UIImage(named: "styleW\(counter)")
+                
+                lineOneLabel.textColor = UIColor.blackColor()
+                lineTwoLabel.textColor = UIColor.blackColor()
+                lineThreeLabel.textColor = UIColor.blackColor()
+                
+                lineOneLabel.shadowColor = nil
+                lineTwoLabel.shadowColor = nil
+                lineThreeLabel.shadowColor = nil
+                
+                renderButton.setTitle("Preview Mode", forState: UIControlState.Normal)
+                
+            }
+    
+        }
+
         print(showPreview)
         
     }
