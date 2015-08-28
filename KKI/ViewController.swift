@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+@IBDesignable
+
+
+class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+    
+    @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet weak var lineOneLabel: UILabel!
     @IBOutlet weak var lineTwoLabel: UILabel!
@@ -26,10 +31,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var orderButton: UIButton!
     
     @IBOutlet weak var startOverButton: UIButton!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
+        
     @IBOutlet weak var keyImageView: UIImageView!
+    
+    @IBOutlet weak var keyView: Styles!
     
     @IBAction func userTappedBackground(sender: AnyObject) {
         view.endEditing(true)
@@ -38,12 +43,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var counter = 4
     
+
+    
     let renderedTextColor = UIColor(red: 132/255, green: 112/255, blue: 12/255, alpha: 1.0)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         self.lineOneTextField.delegate = self
         self.lineTwoTextField.delegate = self
         self.lineThreeTextField.delegate = self
@@ -139,8 +157,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
 
     }
+    
+
+    @IBAction func orderSelectionButtonPressed(sender: UIButton) {
         
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        let screenshot = self.view?.pb_takeSnapshot()
+        
+        //UIImageJPEGRepresentation(screenshot!, 1)
+        
+        UIImageWriteToSavedPhotosAlbum(screenshot!, nil, nil, nil)
+        
+}
+    
     @IBAction func nextStyleButtonPressed(sender: UIButton) {
+        
+        if keyType == 7 {
+            keyType = 1
+            self.view.viewWithTag(5)!.setNeedsDisplay()
+        } else {
+            keyType++
+        print(keyType)
+            
+            self.view.viewWithTag(5)!.setNeedsDisplay()
+            
+        }
+        
+        
+
+        
         
         if counter == 7 {
             
@@ -152,6 +198,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
         if showPreview == true {
+            
             keyImageView.image = UIImage(named: "styleR\(counter)")
             if keyImageView.image == UIImage(named: "styleR7") {
                 lineOneLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
@@ -279,6 +326,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         print(showPreview)
     }
+    @IBOutlet weak var test: Styles!
     
     @IBAction func backStyleButtonPressed(sender: UIButton) {
         
@@ -425,10 +473,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //lineThreeLabel.font = lineThreeLabel.font.fontWithSize(20)
         }
+        
         print(showPreview)
     }
 
-    @IBAction func renderButtonPressed(sender: UIButton) {
+        @IBAction func renderButtonPressed(sender: UIButton) {
         
         if renderButton.currentTitle == "Preview Mode" {
             
@@ -436,13 +485,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             keyImageView.image = UIImage(named: "styleR\(counter)")
             
-            lineOneLabel.textColor = renderedTextColor
-            lineTwoLabel.textColor = renderedTextColor
-            lineThreeLabel.textColor = renderedTextColor
-            
-            lineOneLabel.shadowColor = UIColor.yellowColor()
-            lineTwoLabel.shadowColor = UIColor.yellowColor()
-            lineThreeLabel.shadowColor = UIColor.yellowColor()
+            if keyImageView.image == UIImage(named: "styleR7") {
+                
+                lineOneLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                lineTwoLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                lineThreeLabel.textColor = UIColor(red: 232/255, green: 192/255, blue: 63/255, alpha: 0.9)
+                
+                lineOneLabel.shadowColor = renderedTextColor
+                lineTwoLabel.shadowColor = renderedTextColor
+                lineThreeLabel.shadowColor = renderedTextColor
+            }
+            else {
+                
+                lineOneLabel.textColor = renderedTextColor
+                lineTwoLabel.textColor = renderedTextColor
+                lineThreeLabel.textColor = renderedTextColor
+                
+                lineOneLabel.shadowColor = UIColor.yellowColor()
+                lineTwoLabel.shadowColor = UIColor.yellowColor()
+                lineThreeLabel.shadowColor = UIColor.yellowColor()
+            }
             
             //renderButton.hidden = true
             //orderButton.hidden = false

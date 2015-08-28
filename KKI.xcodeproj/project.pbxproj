@@ -13,12 +13,17 @@
 		9B36B5DB1B7D60EE008298FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5D91B7D60EE008298FE /* Main.storyboard */; };
 		9B36B5DD1B7D60EE008298FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DC1B7D60EE008298FE /* Assets.xcassets */; };
 		9B36B5E01B7D60EE008298FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DE1B7D60EE008298FE /* LaunchScreen.storyboard */; };
+		9B39D35F1B8929D50024324C /* pushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B39D35E1B8929D50024324C /* pushButtonView.swift */; };
+		9B39D3621B8973190024324C /* KKICoreDateModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B39D3601B8973190024324C /* KKICoreDateModel.xcdatamodeld */; };
 		9B4FBD281B84F96500D9C8E0 /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */; };
 		9B4FBD2A1B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD291B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf */; };
 		9B4FBD2C1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */; };
 		9B4FBD2E1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2D1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf */; };
 		9B4FBD301B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */; };
-		9B842A2B1B815FE600502173 /* key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B842A2A1B815FE600502173 /* key.swift */; };
+		9B5C0E661B8A9EEE00B23EE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C0E651B8A9EEE00B23EE7 /* LoginViewController.swift */; };
+		9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CA35A1B877B67009EC19A /* extensions.swift */; };
+		9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD678BA1B8E41510066C9CE /* Styles.swift */; settings = {ASSET_TAGS = (); }; };
+		9BD678BF1B8E4DD40066C9CE /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD678BE1B8E4DD40066C9CE /* KeyStyleKit.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +35,17 @@
 		9B36B5DC1B7D60EE008298FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B36B5DF1B7D60EE008298FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B36B5E11B7D60EE008298FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B39D35E1B8929D50024324C /* pushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pushButtonView.swift; sourceTree = "<group>"; };
+		9B39D3611B8973190024324C /* KKICoreDateModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KKICoreDateModel.xcdatamodel; sourceTree = "<group>"; };
 		9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
 		9B4FBD291B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-BlackOblique.otf"; sourceTree = "<group>"; };
 		9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		9B4FBD2D1B84F99F00D9C8E0 /* AvenirLTStd-LightOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-LightOblique.otf"; sourceTree = "<group>"; };
 		9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaeciliaLTStd Heavy.otf"; sourceTree = "<group>"; };
-		9B842A2A1B815FE600502173 /* key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = key.swift; sourceTree = "<group>"; };
+		9B5C0E651B8A9EEE00B23EE7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9B5CA35A1B877B67009EC19A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		9BD678BA1B8E41510066C9CE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		9BD678BE1B8E4DD40066C9CE /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +79,14 @@
 			isa = PBXGroup;
 			children = (
 				9B36B5D51B7D60ED008298FE /* AppDelegate.swift */,
+				9B39D3601B8973190024324C /* KKICoreDateModel.xcdatamodeld */,
 				9B36B5D71B7D60EE008298FE /* ViewController.swift */,
+				9BD678BE1B8E4DD40066C9CE /* KeyStyleKit.swift */,
+				9BD678BA1B8E41510066C9CE /* Styles.swift */,
+				9B5C0E651B8A9EEE00B23EE7 /* LoginViewController.swift */,
+				9B5CA35A1B877B67009EC19A /* extensions.swift */,
 				9B36B5D91B7D60EE008298FE /* Main.storyboard */,
-				9B842A2A1B815FE600502173 /* key.swift */,
+				9B39D35E1B8929D50024324C /* pushButtonView.swift */,
 				9B36B5DC1B7D60EE008298FE /* Assets.xcassets */,
 				9B36B5DE1B7D60EE008298FE /* LaunchScreen.storyboard */,
 				9B36B5E11B7D60EE008298FE /* Info.plist */,
@@ -161,9 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5C0E661B8A9EEE00B23EE7 /* LoginViewController.swift in Sources */,
 				9B36B5D81B7D60EE008298FE /* ViewController.swift in Sources */,
-				9B842A2B1B815FE600502173 /* key.swift in Sources */,
 				9B36B5D61B7D60ED008298FE /* AppDelegate.swift in Sources */,
+				9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */,
+				9B39D3621B8973190024324C /* KKICoreDateModel.xcdatamodeld in Sources */,
+				9B39D35F1B8929D50024324C /* pushButtonView.swift in Sources */,
+				9BD678BF1B8E4DD40066C9CE /* KeyStyleKit.swift in Sources */,
+				9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +338,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B39D3601B8973190024324C /* KKICoreDateModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B39D3611B8973190024324C /* KKICoreDateModel.xcdatamodel */,
+			);
+			currentVersion = 9B39D3611B8973190024324C /* KKICoreDateModel.xcdatamodel */;
+			path = KKICoreDateModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B36B5CA1B7D60ED008298FE /* Project object */;
 }

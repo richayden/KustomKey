@@ -1,0 +1,26 @@
+//
+//  extensions.swift
+//  KKI
+//
+//  Created by Richard Hayden on 8/21/15.
+//  Copyright © 2015 richayden. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+
+extension UIView {
+    
+    func pb_takeSnapshot() -> UIImage {
+        
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(170, 170), true, 0.0)
+        
+        drawViewHierarchyInRect(CGRectMake((bounds.size.width - 170) / -2, -112, bounds.size.width, bounds.size.height), afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
