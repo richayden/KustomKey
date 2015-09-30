@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+@IBDesignable
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,14 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 215/255, green: 127/255, blue: 35/255, alpha: 1.0)
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "CaeciliaLTStd-Light", size: 20)!]
+        UINavigationBar.appearance().barTintColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 1.0)
+        //UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blackColor(), NSFontAttributeName: UIFont(name: "CaeciliaLTStd-Light", size: 18)!]
         //UINavigationBar.appearance().tintColor = UIColor.lightGrayColor()
         
         //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "CaeciliaLTStd-Heavy", size: 16)!]
-        
-        
-        
         
         
         

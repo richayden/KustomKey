@@ -19,6 +19,8 @@
 		9B4FBD301B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */; };
 		9B5C0E661B8A9EEE00B23EE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C0E651B8A9EEE00B23EE7 /* LoginViewController.swift */; };
 		9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CA35A1B877B67009EC19A /* extensions.swift */; };
+		9B6CF9E51B9BA113000CB9C5 /* progradeLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */; settings = {ASSET_TAGS = (); }; };
+		9B6CF9E91B9BAA9C000CB9C5 /* ProgradeStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF9E81B9BAA9C000CB9C5 /* ProgradeStyleKit.swift */; settings = {ASSET_TAGS = (); }; };
 		9B8DC9661B9AA44000818D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DC1B7D60EE008298FE /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD678BA1B8E41510066C9CE /* Styles.swift */; settings = {ASSET_TAGS = (); }; };
 		9BE8CEB41B94BA5200634DBB /* rButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8CEB31B94BA5200634DBB /* rButton.swift */; settings = {ASSET_TAGS = (); }; };
@@ -30,14 +32,13 @@
 
 /* Begin PBXFileReference section */
 		9B116E0C1B83DEB40089E195 /* CaeciliaLTStd Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaeciliaLTStd Light.otf"; sourceTree = "<group>"; };
-		9B36B5D21B7D60ED008298FE /* Pocket Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Lock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B36B5D21B7D60ED008298FE /* Kustom Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kustom Key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B36B5D51B7D60ED008298FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B36B5D71B7D60EE008298FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B36B5DA1B7D60EE008298FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B36B5DC1B7D60EE008298FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B36B5DF1B7D60EE008298FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B36B5E11B7D60EE008298FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B39D3611B8973190024324C /* KKICoreDateModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KKICoreDateModel.xcdatamodel; sourceTree = "<group>"; };
 		9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
 		9B4FBD291B84F97E00D9C8E0 /* AvenirLTStd-BlackOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-BlackOblique.otf"; sourceTree = "<group>"; };
 		9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
@@ -45,6 +46,8 @@
 		9B4FBD2F1B84FA0B00D9C8E0 /* CaeciliaLTStd Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CaeciliaLTStd Heavy.otf"; sourceTree = "<group>"; };
 		9B5C0E651B8A9EEE00B23EE7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B5CA35A1B877B67009EC19A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progradeLogo.swift; sourceTree = "<group>"; };
+		9B6CF9E81B9BAA9C000CB9C5 /* ProgradeStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgradeStyleKit.swift; sourceTree = "<group>"; };
 		9BD678BA1B8E41510066C9CE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		9BE8CEB31B94BA5200634DBB /* rButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rButton.swift; sourceTree = "<group>"; };
 		9BE8CEB51B94BBA100634DBB /* RButtonStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RButtonStyleKit.swift; sourceTree = "<group>"; };
@@ -75,7 +78,7 @@
 		9B36B5D31B7D60ED008298FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B36B5D21B7D60ED008298FE /* Pocket Lock.app */,
+				9B36B5D21B7D60ED008298FE /* Kustom Key.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				9B36B5D51B7D60ED008298FE /* AppDelegate.swift */,
-				9B39D3601B8973190024324C /* KKICoreDateModel.xcdatamodeld */,
 				9B36B5D71B7D60EE008298FE /* ViewController.swift */,
 				9BD678BA1B8E41510066C9CE /* Styles.swift */,
 				9BE8CEBD1B95495E00634DBB /* KeyStyleKit.swift */,
@@ -95,6 +97,8 @@
 				9BE8CEB71B94BC6C00634DBB /* LButtonStyleKit.swift */,
 				9BE8CEB91B94BC8500634DBB /* lButton.swift */,
 				9BE8CEB31B94BA5200634DBB /* rButton.swift */,
+				9B6CF9E81B9BAA9C000CB9C5 /* ProgradeStyleKit.swift */,
+				9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */,
 				9B36B5DC1B7D60EE008298FE /* Assets.xcassets */,
 				9B36B5DE1B7D60EE008298FE /* LaunchScreen.storyboard */,
 				9B36B5E11B7D60EE008298FE /* Info.plist */,
@@ -125,7 +129,7 @@
 			);
 			name = "Kustom Key";
 			productName = KKI;
-			productReference = 9B36B5D21B7D60ED008298FE /* Pocket Lock.app */;
+			productReference = 9B36B5D21B7D60ED008298FE /* Kustom Key.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,6 +199,8 @@
 				9BE8CEBA1B94BC8500634DBB /* lButton.swift in Sources */,
 				9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */,
 				9BE8CEB61B94BBA100634DBB /* RButtonStyleKit.swift in Sources */,
+				9B6CF9E91B9BAA9C000CB9C5 /* ProgradeStyleKit.swift in Sources */,
+				9B6CF9E51B9BA113000CB9C5 /* progradeLogo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,10 +316,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KKI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.richayden.Kustom-Key";
-				PRODUCT_NAME = "Pocket Lock";
+				PRODUCT_NAME = "Kustom Key";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -326,10 +332,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KKI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.richayden.Kustom-Key";
-				PRODUCT_NAME = "Pocket Lock";
+				PRODUCT_NAME = "Kustom Key";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -357,19 +363,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9B39D3601B8973190024324C /* KKICoreDateModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9B39D3611B8973190024324C /* KKICoreDateModel.xcdatamodel */,
-			);
-			currentVersion = 9B39D3611B8973190024324C /* KKICoreDateModel.xcdatamodel */;
-			path = KKICoreDateModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9B36B5CA1B7D60ED008298FE /* Project object */;
 }
