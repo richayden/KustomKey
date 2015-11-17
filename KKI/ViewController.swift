@@ -13,9 +13,7 @@ import CoreGraphics
 @IBDesignable
 
 
-class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
-    
-    @IBOutlet var scrollView: UIScrollView!
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var lineOneLabel: UILabel!
     @IBOutlet weak var lineTwoLabel: UILabel!
@@ -25,42 +23,43 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
     @IBOutlet weak var lineTwoTextField: UITextField!
     @IBOutlet weak var lineThreeTextField: UITextField!
     
-    @IBOutlet weak var RButton: UIButton!
-    @IBOutlet weak var LButton: UIButton!
-    
+    @IBOutlet weak var materialSelector: UISegmentedControl!
    
     @IBOutlet weak var previewButton: UIButton!
-    @IBOutlet weak var nickelButton: UIButton!
-    @IBOutlet weak var brassButton: UIButton!
     
     @IBOutlet weak var orderButton: UIButton!
-    
-    @IBOutlet weak var startOverButton: UIButton!
-    
+        
     @IBOutlet weak var keyView: Styles!
     
     @IBAction func userTappedBackground(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    var swipeKeyStyle: Bool?
+    
     // Defining user defaults and line one key
-    let myDefaults = NSUserDefaults.standardUserDefaults()
-    let lineOneTextSavedKey = "lineOneText"
+    //let myDefaults = NSUserDefaults.standardUserDefaults()
+    //let lineOneTextSavedKey = "lineOneText"
     
     
-    let renderedTextColor = UIColor(red: 132/255, green: 112/255, blue: 12/255, alpha: 1.0)
+    let renderedTextColor = UIColor(red: 100/255, green: 88/255, blue: 12/255, alpha: 1.0)
+    let brassEmbossedTextColor = UIColor(red: 211/255, green: 184/255, blue: 46/255, alpha: 1.0)
+    let brassEmbossedShadowColor = UIColor(red: 142/255, green: 127/255, blue: 76/255, alpha: 1.0)
+    let nickelEmbossedTextColor = UIColor(red: 216/255, green: 127/255, blue: 76/255, alpha: 1.0)
+    let nickelEmbossedShadowColor = UIColor(red: 145/255, green: 135/255, blue: 107/255, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // View did load checks and loads line one key's value
-        let myDefaults = NSUserDefaults.standardUserDefaults()
-        if let lineOne = myDefaults.stringForKey(lineOneTextSavedKey)
-        {
-            lineOneLabel.text = lineOne
-            lineOneLabel.hidden = false
-            lineOneTextField.hidden = true
-        }
+        //let myDefaults = NSUserDefaults.standardUserDefaults()
+        //if let lineOne = myDefaults.stringForKey(lineOneTextSavedKey)
+//        {
+//            lineOneLabel.text = lineOne
+//            lineOneLabel.hidden = false
+//            lineOneTextField.hidden = true
+//        }
 
         
         
@@ -69,23 +68,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
         self.lineTwoTextField.delegate = self
         self.lineThreeTextField.delegate = self
         
-        brassButton.backgroundColor = UIColor(red: 216/255, green: 182/255, blue: 82/255, alpha: 1.0)
-        brassButton.layer.cornerRadius = 15
-        brassButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
-        brassButton.layer.borderWidth = 1.5
-        brassButton.layer.borderColor = UIColor.yellowColor().CGColor
-        brassButton.layer.shadowOffset = CGSizeMake(3, 3)
-        brassButton.layer.shadowColor = UIColor.blackColor().CGColor
-        brassButton.layer.shadowOpacity = 1.0
-        
-        nickelButton.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 0.4)
-        nickelButton.layer.cornerRadius = 15
-        
-        nickelButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        nickelButton.layer.borderWidth = 0.0
-        nickelButton.layer.shadowOffset = CGSizeMake(3, 3)
-        nickelButton.layer.shadowColor = UIColor.blackColor().CGColor
-        nickelButton.layer.shadowOpacity = 0.0
+//        brassButton.backgroundColor = UIColor(red: 216/255, green: 182/255, blue: 82/255, alpha: 1.0)
+//        brassButton.layer.cornerRadius = 15
+//        brassButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+//        brassButton.layer.borderWidth = 1.5
+//        brassButton.layer.borderColor = UIColor.yellowColor().CGColor
+//        brassButton.layer.shadowOffset = CGSizeMake(3, 3)
+//        brassButton.layer.shadowColor = UIColor.blackColor().CGColor
+//        brassButton.layer.shadowOpacity = 1.0
+//        
+//        nickelButton.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 0.4)
+//        nickelButton.layer.cornerRadius = 15
+//        
+//        nickelButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+//        nickelButton.layer.borderWidth = 0.0
+//        nickelButton.layer.shadowOffset = CGSizeMake(3, 3)
+//        nickelButton.layer.shadowColor = UIColor.blackColor().CGColor
+//        nickelButton.layer.shadowOpacity = 0.0
         
         
     }
@@ -123,7 +122,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                 lineOneLabel.hidden = false
                 lineOneLabel.text = lineOneTextField.text
                 // Text for line one is saved to user defaults
-                myDefaults.setObject(lineOneTextField.text, forKey: lineOneTextSavedKey)
+                //myDefaults.setObject(lineOneTextField.text, forKey: lineOneTextSavedKey)
                 lineOneTextField.hidden = true
                 lineTwoTextField.hidden = false
                 lineTwoTextField.enablesReturnKeyAutomatically = false
@@ -172,9 +171,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                 lineThreeLabel.text = lineThreeTextField.text
                 lineThreeTextField.hidden = true
                 previewButton.hidden = false
-                RButton.hidden = false
-                LButton.hidden = false
                 lineThreeTextField.resignFirstResponder()
+                swipeKeyStyle = true
             }
         }
             return true
@@ -305,16 +303,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
     
     @IBAction func clearButtonPressed(sender: AnyObject) {
         
-        myDefaults.setObject(nil, forKey: lineOneTextSavedKey)
-        keyType == 4
-        self.view.viewWithTag(5)!.setNeedsDisplay()
-        lineOneLabel.hidden = true
-        lineOneTextField.hidden = false
+//        myDefaults.setObject(nil, forKey: lineOneTextSavedKey)
+//        wireView == true
+//        keyType == 4
+//        lineOneLabel.hidden = true
+//        lineOneTextField.hidden = false
+//        self.view.viewWithTag(5)!.setNeedsDisplay()
         
         
     }
-    @IBAction func nextStyleButtonPressed(sender: UIButton) {
-        
+    
+    
+    @IBAction func rightSwipe(sender: UISwipeGestureRecognizer) {
+//    }
+//    
+//    @IBAction func nextStyleButtonPressed(sender: UIButton) {
+        if swipeKeyStyle == true {
         if keyType == 7 {
             keyType = 1
             self.view.viewWithTag(5)!.setNeedsDisplay()
@@ -410,9 +414,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
             lineTwoLabel.textColor = renderedTextColor
             lineThreeLabel.textColor = renderedTextColor
             
-            lineOneLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-            lineTwoLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-            lineThreeLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+            //lineOneLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+            //lineTwoLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+            //lineThreeLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
         
         if brassType == 1 {
             
@@ -458,13 +462,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                                     styleEFontSetup()
                                     
                                         
-                                        lineOneLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                        lineTwoLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                        lineThreeLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+                                        lineOneLabel.textColor = brassEmbossedTextColor
+                                        lineTwoLabel.textColor = brassEmbossedTextColor
+                                        lineThreeLabel.textColor = brassEmbossedTextColor
                                         
-                                        lineOneLabel.shadowColor = renderedTextColor
-                                        lineTwoLabel.shadowColor = renderedTextColor
-                                        lineThreeLabel.shadowColor = renderedTextColor
+                                        lineOneLabel.shadowColor = brassEmbossedShadowColor
+                                        lineTwoLabel.shadowColor = brassEmbossedShadowColor
+                                        lineThreeLabel.shadowColor = brassEmbossedShadowColor
                                     }
                                     else {
                                         
@@ -472,9 +476,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                                         lineTwoLabel.textColor = renderedTextColor
                                         lineThreeLabel.textColor = renderedTextColor
                                         
-                                        lineOneLabel.shadowColor = UIColor.yellowColor()
-                                        lineTwoLabel.shadowColor = UIColor.yellowColor()
-                                        lineThreeLabel.shadowColor = UIColor.yellowColor()
+//                                        lineOneLabel.shadowColor = UIColor.yellowColor()
+//                                        lineTwoLabel.shadowColor = UIColor.yellowColor()
+//                                        lineThreeLabel.shadowColor = UIColor.yellowColor()
                                     
 
                                 }
@@ -489,11 +493,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
         
         
     }
-    
+    }
     
 //******************************************NOT THIS******************
-    @IBAction func backStyleButtonPressed(sender: UIButton) {
-        
+    
+    
+    
+    @IBAction func leftSwipe(sender: UISwipeGestureRecognizer) {
+//    }
+//    
+//    @IBAction func backStyleButtonPressed(sender: UIButton) {
+        if swipeKeyStyle == true {
         if keyType == 1 {
             keyType = 7
             self.view.viewWithTag(5)!.setNeedsDisplay()
@@ -589,9 +599,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
             lineTwoLabel.textColor = renderedTextColor
             lineThreeLabel.textColor = renderedTextColor
             
-            lineOneLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-            lineTwoLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-            lineThreeLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+//            lineOneLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+//            lineTwoLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+//            lineThreeLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
             
             if brassType == 1 {
                 
@@ -636,14 +646,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                                         
                                         styleEFontSetup()
                                         
+                                        lineOneLabel.textColor = brassEmbossedTextColor
+                                        lineTwoLabel.textColor = brassEmbossedTextColor
+                                        lineThreeLabel.textColor = brassEmbossedTextColor
                                         
-                                        lineOneLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                        lineTwoLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                        lineThreeLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                        
-                                        lineOneLabel.shadowColor = renderedTextColor
-                                        lineTwoLabel.shadowColor = renderedTextColor
-                                        lineThreeLabel.shadowColor = renderedTextColor
+                                        lineOneLabel.shadowColor = brassEmbossedShadowColor
+                                        lineTwoLabel.shadowColor = brassEmbossedShadowColor
+                                        lineThreeLabel.shadowColor = brassEmbossedShadowColor
                                     }
                                     else {
                                         
@@ -651,9 +660,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                                         lineTwoLabel.textColor = renderedTextColor
                                         lineThreeLabel.textColor = renderedTextColor
                                         
-                                        lineOneLabel.shadowColor = UIColor.yellowColor()
-                                        lineTwoLabel.shadowColor = UIColor.yellowColor()
-                                        lineThreeLabel.shadowColor = UIColor.yellowColor()
+//                                        lineOneLabel.shadowColor = UIColor.yellowColor()
+//                                        lineTwoLabel.shadowColor = UIColor.yellowColor()
+//                                        lineThreeLabel.shadowColor = UIColor.yellowColor()
                                         
                                         
                                     }
@@ -672,9 +681,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                 lineTwoLabel.textColor = renderedTextColor
                 lineThreeLabel.textColor = renderedTextColor
                 
-                lineOneLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                lineTwoLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                lineThreeLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+//                lineOneLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+//                lineTwoLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+//                lineThreeLabel.shadowColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
                 
                 if nickelType == 1 {
                     
@@ -720,13 +729,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                                             styleEFontSetup()
                                             
                                             
-                                            lineOneLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                            lineTwoLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                                            lineThreeLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+                                            lineOneLabel.textColor = nickelEmbossedTextColor
+                                            lineTwoLabel.textColor = nickelEmbossedTextColor
+                                            lineThreeLabel.textColor = nickelEmbossedTextColor
                                             
-                                            lineOneLabel.shadowColor = renderedTextColor
-                                            lineTwoLabel.shadowColor = renderedTextColor
-                                            lineThreeLabel.shadowColor = renderedTextColor
+                                            lineOneLabel.shadowColor = nickelEmbossedShadowColor
+                                            lineTwoLabel.shadowColor = nickelEmbossedShadowColor
+                                            lineThreeLabel.shadowColor = nickelEmbossedShadowColor
                                         }
                                         else {
                                             
@@ -734,9 +743,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                                             lineTwoLabel.textColor = renderedTextColor
                                             lineThreeLabel.textColor = renderedTextColor
                                             
-                                            lineOneLabel.shadowColor = UIColor.yellowColor()
-                                            lineTwoLabel.shadowColor = UIColor.yellowColor()
-                                            lineThreeLabel.shadowColor = UIColor.yellowColor()
+//                                            lineOneLabel.shadowColor = UIColor.yellowColor()
+//                                            lineTwoLabel.shadowColor = UIColor.yellowColor()
+//                                            lineThreeLabel.shadowColor = UIColor.yellowColor()
                                             
                                             
                                         }
@@ -751,11 +760,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
         }
         }
     }
+    }
 
     @IBAction func previewModeButtonPressed(sender: UIButton) {
         
-        brassButton.hidden = false
-        nickelButton.hidden = false
+        materialSelector.hidden = false
         
         if previewButton.currentTitle == "Preview Mode" {
             self.view.viewWithTag(5)!.setNeedsDisplay()
@@ -766,13 +775,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
             //brassType = keyType
             if brassType == 7 {
                 
-                lineOneLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                lineTwoLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
-                lineThreeLabel.textColor = UIColor(red: 247/255, green: 230/255, blue: 41/255, alpha: 1.0)
+                lineOneLabel.textColor = brassEmbossedTextColor
+                lineTwoLabel.textColor = brassEmbossedTextColor
+                lineThreeLabel.textColor = brassEmbossedTextColor
                 
-                lineOneLabel.shadowColor = renderedTextColor
-                lineTwoLabel.shadowColor = renderedTextColor
-                lineThreeLabel.shadowColor = renderedTextColor
+                lineOneLabel.shadowColor = brassEmbossedShadowColor
+                lineTwoLabel.shadowColor = brassEmbossedShadowColor
+                lineThreeLabel.shadowColor = brassEmbossedShadowColor
             }
             else {
                 
@@ -782,9 +791,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                 lineTwoLabel.textColor = renderedTextColor
                 lineThreeLabel.textColor = renderedTextColor
                 
-                lineOneLabel.shadowColor = UIColor.yellowColor()
-                lineTwoLabel.shadowColor = UIColor.yellowColor()
-                lineThreeLabel.shadowColor = UIColor.yellowColor()
+//                lineOneLabel.shadowColor = UIColor.yellowColor()
+//                lineTwoLabel.shadowColor = UIColor.yellowColor()
+//                lineThreeLabel.shadowColor = UIColor.yellowColor()
             }
             
             //renderButton.hidden = true
@@ -801,8 +810,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
                 brassView = false
                 nickelView = false
                 //keyType = brassType
-                brassButton.hidden = true
-                nickelButton.hidden = true
+                materialSelector.hidden = true
                 
                 self.view.viewWithTag(5)!.setNeedsDisplay()
                 //brassView = false
@@ -825,59 +833,68 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
         
     }
     
-    @IBAction func brassButtonPressed(sender: UIButton) {
+    @IBAction func materialPreviewSelector(sender: UISegmentedControl) {
+        
+        if materialSelector.selectedSegmentIndex == 0 {
+        
+        
+//    }
+//    @IBAction func brassButtonPressed(sender: UIButton) {
         
         self.view.viewWithTag(5)!.setNeedsDisplay()
         nickelView = false
         brassView = true
         brassType = nickelType
         
-        brassButton.backgroundColor = UIColor(red: 216/255, green: 182/255, blue: 82/255, alpha: 1.0)
-        brassButton.layer.cornerRadius = 15
-        brassButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
-        brassButton.layer.borderWidth = 1.5
-        brassButton.layer.borderColor = UIColor.yellowColor().CGColor
-        brassButton.layer.shadowOffset = CGSizeMake(3, 3)
-        brassButton.layer.shadowColor = UIColor.blackColor().CGColor
-        brassButton.layer.shadowOpacity = 1.0
-        
-        nickelButton.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 0.4)
-        nickelButton.layer.cornerRadius = 15
-        
-        nickelButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        nickelButton.layer.borderWidth = 0.0
-        nickelButton.layer.shadowOffset = CGSizeMake(3, 3)
-        nickelButton.layer.shadowColor = UIColor.blackColor().CGColor
-        nickelButton.layer.shadowOpacity = 0.0
-    }
-    @IBAction func nickelButtonPressed(sender: UIButton) {
+//        brassButton.backgroundColor = UIColor(red: 216/255, green: 182/255, blue: 82/255, alpha: 1.0)
+//        brassButton.layer.cornerRadius = 15
+//        brassButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+//        brassButton.layer.borderWidth = 1.5
+//        brassButton.layer.borderColor = UIColor.yellowColor().CGColor
+//        brassButton.layer.shadowOffset = CGSizeMake(3, 3)
+//        brassButton.layer.shadowColor = UIColor.blackColor().CGColor
+//        brassButton.layer.shadowOpacity = 1.0
+//        
+//        nickelButton.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 0.4)
+//        nickelButton.layer.cornerRadius = 15
+//        
+//        nickelButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+//        nickelButton.layer.borderWidth = 0.0
+//        nickelButton.layer.shadowOffset = CGSizeMake(3, 3)
+//        nickelButton.layer.shadowColor = UIColor.blackColor().CGColor
+//        nickelButton.layer.shadowOpacity = 0.0
+        } else {
+            if materialSelector.selectedSegmentIndex == 1 {
+//        }
+//    @IBAction func nickelButtonPressed(sender: UIButton) {
         
         self.view.viewWithTag(5)!.setNeedsDisplay()
         brassView = false
         nickelView = true
         nickelType = brassType
         
-        brassButton.backgroundColor = UIColor(red: 216/255, green: 182/255, blue: 82/255, alpha: 0.4)
-        brassButton.layer.cornerRadius = 15
-        brassButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-        brassButton.layer.borderWidth = 0.0
-        brassButton.layer.shadowOffset = CGSizeMake(3, 3)
-        brassButton.layer.shadowColor = UIColor.blackColor().CGColor
-        brassButton.layer.shadowOpacity = 0.0
+//        brassButton.backgroundColor = UIColor(red: 216/255, green: 182/255, blue: 82/255, alpha: 0.4)
+//        brassButton.layer.cornerRadius = 15
+//        brassButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+//        brassButton.layer.borderWidth = 0.0
+//        brassButton.layer.shadowOffset = CGSizeMake(3, 3)
+//        brassButton.layer.shadowColor = UIColor.blackColor().CGColor
+//        brassButton.layer.shadowOpacity = 0.0
+//        
+//        nickelButton.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 1.0)
+//        nickelButton.layer.cornerRadius = 15
+//        nickelButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+//        
+//        
+//        nickelButton.layer.borderWidth = 1.5
+//        nickelButton.layer.borderColor = UIColor(red: 242/255, green: 234/255, blue: 212/255, alpha: 1.0).CGColor
+//        nickelButton.layer.shadowOffset = CGSizeMake(3, 3)
+//        nickelButton.layer.shadowColor = UIColor.blackColor().CGColor
+//        nickelButton.layer.shadowOpacity = 1.0
         
-        nickelButton.backgroundColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 1.0)
-        nickelButton.layer.cornerRadius = 15
-        nickelButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
         
-        
-        nickelButton.layer.borderWidth = 1.5
-        nickelButton.layer.borderColor = UIColor(red: 242/255, green: 234/255, blue: 212/255, alpha: 1.0).CGColor
-        nickelButton.layer.shadowOffset = CGSizeMake(3, 3)
-        nickelButton.layer.shadowColor = UIColor.blackColor().CGColor
-        nickelButton.layer.shadowOpacity = 1.0
-        
-        
-        
+            }
+        }
     }
 
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+
 @IBDesignable
 
 @UIApplicationMain
@@ -15,17 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 1.0)
-        //UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.blackColor(), NSFontAttributeName: UIFont(name: "CaeciliaLTStd-Light", size: 18)!]
-        //UINavigationBar.appearance().tintColor = UIColor.lightGrayColor()
         
-        //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "CaeciliaLTStd-Heavy", size: 16)!]
+        UINavigationBar.appearance().translucent = false
         
+        UINavigationBar.appearance().tintColor = UIColor.darkGrayColor()
         
+//        let navBgImage:UIImage = KeyStyleKit.imageOfNavBarGradient
+//        UINavigationBar.appearance().setBackgroundImage(navBgImage, forBarMetrics: .Default)
+        
+        UITabBar.appearance().translucent = true
+        //UITabBar.appearance().tintColor = KeyStyleKit.brass
+
+        UITabBar.appearance().barTintColor = KeyStyleKit.nickelLight
+        
+        // [Optional] Track statistics around application opens.
+        //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         return true
     }

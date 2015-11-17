@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Manufacturer</key>
+	<array>
+		<string>Alba</string>
+		<string>American Padlock</string>
+		<string>Arrow</string>
+		<string>Best I/C</string>
+		<string>Challenger</string>
+		<string>Corbin</string>
+		<string>Corbin/Russwin</string>
+		<string>Dexter</string>
+		<string>Falcon/Weiser</string>
+		<string>General</string>
+		<string>Harloc</string>
+		<string>Ilco</string>
+		<string>Kwikset</string>
+		<string>Lockwood</string>
+		<string>Lori</string>
+		<string>Master</string>
+		<string>Medeco</string>
+		<string>National</string>
+		<string>Russwin</string>
+		<string>Safe Depost</string>
+		<string>Sargent</string>
+		<string>Schlage</string>
+		<string>Segal</string>
+		<string>Taylor</string>
+		<string>Weslock</string>
+		<string>Yale</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="leftCellID" rowHeight="300" id="aeg-Ti-cuJ" customClass="LeftTableViewCell" customModule="Kustom_Key" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="aeg-Ti-cuJ" id="WJk-fG-26h">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z5a-B3-P19">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-Iu-LrD">
+                        <rect key="frame" x="30" y="224" width="100" height="25"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="1" green="0.87751084930000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" red="0.8413271832" green="0.5" blue="0.13557137459999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade 2 D605 Deadbolt" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNv-R3-zcP">
+                        <rect key="frame" x="425" y="15" width="159" height="50"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="159" id="647-Kk-dg4"/>
+                            <constraint firstAttribute="height" constant="50" id="VKW-9L-PTf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbW-Te-I3G">
+                        <rect key="frame" x="523" y="61" width="61" height="30"/>
+                        <animations/>
+                        <state key="normal" title="Buy Now"/>
+                    </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Seller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cke-A2-y3M">
+                        <rect key="frame" x="44" y="247" width="73" height="20"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="z5a-B3-P19" secondAttribute="trailing" id="2Gt-aK-h9b"/>
+                    <constraint firstItem="z5a-B3-P19" firstAttribute="top" secondItem="WJk-fG-26h" secondAttribute="top" id="8rv-lD-rqS"/>
+                    <constraint firstItem="Cke-A2-y3M" firstAttribute="centerX" secondItem="CgR-Iu-LrD" secondAttribute="centerX" id="Gtp-no-FkH"/>
+                    <constraint firstItem="wNv-R3-zcP" firstAttribute="trailing" secondItem="LbW-Te-I3G" secondAttribute="trailing" id="Oey-iw-WT9"/>
+                    <constraint firstItem="CgR-Iu-LrD" firstAttribute="leading" secondItem="WJk-fG-26h" secondAttribute="leadingMargin" constant="22" id="YDM-m7-2dw"/>
+                    <constraint firstItem="z5a-B3-P19" firstAttribute="centerY" secondItem="WJk-fG-26h" secondAttribute="centerY" id="Yuk-yD-fxM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CgR-Iu-LrD" secondAttribute="bottom" constant="42" id="bi3-AO-p7n"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Cke-A2-y3M" secondAttribute="bottom" constant="24" id="fze-7q-wXc"/>
+                    <constraint firstItem="LbW-Te-I3G" firstAttribute="top" secondItem="WJk-fG-26h" secondAttribute="topMargin" constant="53" id="pKE-Az-Eqj"/>
+                    <constraint firstItem="wNv-R3-zcP" firstAttribute="top" secondItem="WJk-fG-26h" secondAttribute="topMargin" constant="7" id="tXe-Pg-2cY"/>
+                    <constraint firstItem="z5a-B3-P19" firstAttribute="leading" secondItem="WJk-fG-26h" secondAttribute="leading" id="uXS-CP-Dpk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wNv-R3-zcP" secondAttribute="trailing" constant="8" id="ybn-HS-X8x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="buyNowButton" destination="LbW-Te-I3G" id="Bc6-GF-ru7"/>
+                <outlet property="leftImage" destination="z5a-B3-P19" id="nFD-uq-Mo2"/>
+                <outlet property="leftLabel" destination="wNv-R3-zcP" id="8Bd-iQ-oS1"/>
+                <outlet property="stars" destination="CgR-Iu-LrD" id="eQK-9e-4Yw"/>
+                <outlet property="topSellers" destination="Cke-A2-y3M" id="F4i-Ng-ozp"/>
+            </connections>
+            <point key="canvasLocation" x="520" y="312"/>
+        </tableViewCell>
+    </objects>
+</document>

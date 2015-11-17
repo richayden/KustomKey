@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="logoCellID" rowHeight="100" id="ZYz-Ir-h9p" customClass="LogoTableViewCell" customModule="Kustom_Key" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="ZYz-Ir-h9p" id="WAc-FQ-ive">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="DZj-2L-gDa" customClass="progradeLogo" customModule="Kustom_Key" customModuleProvider="target">
+                        <rect key="frame" x="150" y="0.0" width="300" height="100"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="7t5-oY-h8M"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="DZj-2L-gDa" firstAttribute="top" secondItem="WAc-FQ-ive" secondAttribute="top" id="Xpb-kc-pNn"/>
+                    <constraint firstItem="DZj-2L-gDa" firstAttribute="centerX" secondItem="WAc-FQ-ive" secondAttribute="centerX" id="fy7-xb-5Y4"/>
+                    <constraint firstItem="DZj-2L-gDa" firstAttribute="centerY" secondItem="WAc-FQ-ive" secondAttribute="centerY" id="peA-O1-K1r"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <point key="canvasLocation" x="587" y="312"/>
+        </tableViewCell>
+    </objects>
+</document>

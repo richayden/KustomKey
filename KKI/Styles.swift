@@ -19,27 +19,34 @@ var nickelType = 4
 class Styles: UIView {
 
     override func drawRect(rect: CGRect) {
-             
+        
         if keyType == 1 && wireView == true {
             KeyStyleKit.drawStyle1W()
+            //DesignerVC().style1FontSetup()
         }
         if keyType == 2 && wireView == true {
             KeyStyleKit.drawStyle2W()
+            //DesignerVC().style2FontSetup()
         }
         if keyType == 3 && wireView == true {
             KeyStyleKit.drawStyle4W()
+            //DesignerVC().style4FontSetup()
         }
         if keyType == 4 && wireView == true {
             KeyStyleKit.drawStyle5W()
+            //DesignerVC().style5FontSetup()
         }
         if keyType == 5 && wireView == true {
             KeyStyleKit.drawStyle6W()
+            //DesignerVC().style6FontSetup()
         }
         if keyType == 6 && wireView == true {
             KeyStyleKit.drawStyle8W()
+            //DesignerVC().style8FontSetup()
         }
         if keyType == 7 && wireView == true {
             KeyStyleKit.drawStyleEW()
+            //DesignerVC().styleEFontSetup()
         }
         
         if brassType == 1 && brassView == true {
@@ -85,12 +92,8 @@ class Styles: UIView {
         if nickelType == 7 && nickelView == true {
             KeyStyleKit.drawStyleEN()
         }
-
-
         
         self.setNeedsDisplay()
-        
-
         
     }
 }
