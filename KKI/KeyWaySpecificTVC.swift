@@ -13,7 +13,7 @@ class KeyWaySpecificTVC: UITableViewController, UITextFieldDelegate {
     
     let brassColor = UIColor(red: 199/255, green: 176/255, blue: 107/255, alpha: 1.0)
     let nickelColor = UIColor(red: 198/255, green: 198/255, blue: 177/255, alpha: 1.0)
-    var checkedRows=Set<NSIndexPath>()
+    //var checkedRows=Set<NSIndexPath>()
     let keyWayPartNumber = KeyWaySpecificData()
     let keyWaySpecificIdentifier = "keyWaySpecificID"
     

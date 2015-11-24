@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+@IBDesignable
 class progradeLogo: UIView {
 
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        ProgradeStyleKit.drawPrograde()
+        KeyStyleKit.drawPrograde()
     }
     
 

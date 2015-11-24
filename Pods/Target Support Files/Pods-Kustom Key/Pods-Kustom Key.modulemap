@@ -1,0 +1,6 @@
+framework module Pods_Kustom_Key {
+  umbrella header "Pods-Kustom Key-umbrella.h"
+
+  export *
+  module * { export * }
+}

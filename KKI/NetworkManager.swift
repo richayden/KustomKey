@@ -25,7 +25,7 @@ class NetworkManager: NSObject {
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
-                print(response.data)     // server data
+                //print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
                 var items = Array<CatalogData>()

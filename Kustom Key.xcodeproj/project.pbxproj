@@ -17,6 +17,9 @@
 		9B4FBD2C1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */; };
 		9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CA35A1B877B67009EC19A /* extensions.swift */; };
 		9B6CF9E51B9BA113000CB9C5 /* progradeLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */; };
+		9B7183A21C022BCF009613B8 /* CatalogJSON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A01C022BCF009613B8 /* CatalogJSON.xcdatamodeld */; };
+		9B7183A51C029FDB009613B8 /* Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A31C029FDB009613B8 /* Images+CoreDataProperties.swift */; };
+		9B7183A61C029FDB009613B8 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A41C029FDB009613B8 /* Images.swift */; };
 		9B77425B1BF18C4800631E4A /* Avenir Next Condensed.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9B77425A1BF18B0200631E4A /* Avenir Next Condensed.ttc */; };
 		9B8DC9661B9AA44000818D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DC1B7D60EE008298FE /* Assets.xcassets */; };
 		9BBB93051BDAA14500E242D1 /* LockPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB93041BDAA14500E242D1 /* LockPickerVC.swift */; };
@@ -27,7 +30,6 @@
 		9BBCE2231BDD702500E9A95C /* KeyWayData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BBCE2221BDD702500E9A95C /* KeyWayData.plist */; };
 		9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD678BA1B8E41510066C9CE /* Styles.swift */; };
 		9C80E9DA1BD0A30E0062642E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E9D91BD0A30E0062642E /* Data.swift */; };
-		9C8AC7EC1BD6D1E600CC4627 /* ProgradeStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8AC7EB1BD6D1E600CC4627 /* ProgradeStyleKit.swift */; };
 		9C9C7AFD1BF8E7B600FE3FB3 /* CatalogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */; };
 		9C9C7AFF1BF8E95A00FE3FB3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7AFE1BF8E95A00FE3FB3 /* DataManager.swift */; };
 		9C9C7B011BF8EB6900FE3FB3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7B001BF8EB6900FE3FB3 /* NetworkManager.swift */; };
@@ -35,12 +37,12 @@
 		9CA73BCF1BD1DCDB00E16ED7 /* RightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA73BCE1BD1DCDB00E16ED7 /* RightTableViewCell.swift */; };
 		9CA73BD11BD1DEE900E16ED7 /* logoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA73BD01BD1DEE900E16ED7 /* logoCell.xib */; };
 		9CA73BD31BD1DFCC00E16ED7 /* LogoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA73BD21BD1DFCC00E16ED7 /* LogoTableViewCell.swift */; };
+		9CC3278C1BFD71D600CCECD9 /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3278B1BFD71D500CCECD9 /* KeyStyleKit.swift */; };
 		9CC70F021BCF2C9E000ACE81 /* leftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC70F011BCF2C9E000ACE81 /* leftCell.xib */; };
 		9CC70F041BCF2E53000ACE81 /* LeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC70F031BCF2E53000ACE81 /* LeftTableViewCell.swift */; };
 		9CC70F061BCF3DB5000ACE81 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC70F051BCF3DB5000ACE81 /* CatalogVC.swift */; };
 		9CCC916E1BE834A80040487D /* KeyWaySpecificCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC916D1BE834A80040487D /* KeyWaySpecificCell.swift */; };
 		9CDB449B1BEFE6E900DD9001 /* DesignerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB449A1BEFE6E900DD9001 /* DesignerVC.swift */; };
-		9CF6412A1BF820FB0087A241 /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF641291BF820FB0087A241 /* KeyStyleKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,9 @@
 		9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		9B5CA35A1B877B67009EC19A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progradeLogo.swift; sourceTree = "<group>"; };
+		9B7183A11C022BCF009613B8 /* CatalogJSON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatalogJSON.xcdatamodel; sourceTree = "<group>"; };
+		9B7183A31C029FDB009613B8 /* Images+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B7183A41C029FDB009613B8 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		9B77425A1BF18B0200631E4A /* Avenir Next Condensed.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir Next Condensed.ttc"; sourceTree = "<group>"; };
 		9BBB93041BDAA14500E242D1 /* LockPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockPickerVC.swift; sourceTree = "<group>"; };
 		9BBB930A1BDAF04C00E242D1 /* KeyWaysTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyWaysTVC.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		9BBCE2221BDD702500E9A95C /* KeyWayData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyWayData.plist; sourceTree = "<group>"; };
 		9BD678BA1B8E41510066C9CE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		9C80E9D91BD0A30E0062642E /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		9C8AC7EB1BD6D1E600CC4627 /* ProgradeStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgradeStyleKit.swift; sourceTree = "<group>"; };
 		9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogData.swift; sourceTree = "<group>"; };
 		9C9C7AFE1BF8E95A00FE3FB3 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9C9C7B001BF8EB6900FE3FB3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -74,12 +78,12 @@
 		9CA73BCE1BD1DCDB00E16ED7 /* RightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTableViewCell.swift; sourceTree = "<group>"; };
 		9CA73BD01BD1DEE900E16ED7 /* logoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logoCell.xib; sourceTree = "<group>"; };
 		9CA73BD21BD1DFCC00E16ED7 /* LogoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoTableViewCell.swift; sourceTree = "<group>"; };
+		9CC3278B1BFD71D500CCECD9 /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
 		9CC70F011BCF2C9E000ACE81 /* leftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = leftCell.xib; sourceTree = "<group>"; };
 		9CC70F031BCF2E53000ACE81 /* LeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewCell.swift; sourceTree = "<group>"; };
 		9CC70F051BCF3DB5000ACE81 /* CatalogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
 		9CCC916D1BE834A80040487D /* KeyWaySpecificCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyWaySpecificCell.swift; sourceTree = "<group>"; };
 		9CDB449A1BEFE6E900DD9001 /* DesignerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerVC.swift; sourceTree = "<group>"; };
-		9CF641291BF820FB0087A241 /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
 		D8C915534DAD94AF95D320AE /* Pods_Kustom_Key.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kustom_Key.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1DE41139E88B2A1BA6D959 /* Pods-Kustom Key.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kustom Key.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kustom Key/Pods-Kustom Key.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,9 +169,8 @@
 		9B6C49BF1BC18FCD00C38DAB /* StyleKit */ = {
 			isa = PBXGroup;
 			children = (
-				9CF641291BF820FB0087A241 /* KeyStyleKit.swift */,
+				9CC3278B1BFD71D500CCECD9 /* KeyStyleKit.swift */,
 				9BD678BA1B8E41510066C9CE /* Styles.swift */,
-				9C8AC7EB1BD6D1E600CC4627 /* ProgradeStyleKit.swift */,
 				9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */,
 			);
 			name = StyleKit;
@@ -191,6 +194,9 @@
 				9BBB93121BDB1BA800E242D1 /* KeyWaySpecificData.swift */,
 				9C80E9D91BD0A30E0062642E /* Data.swift */,
 				9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */,
+				9B7183A31C029FDB009613B8 /* Images+CoreDataProperties.swift */,
+				9B7183A41C029FDB009613B8 /* Images.swift */,
+				9B7183A01C022BCF009613B8 /* CatalogJSON.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -359,26 +365,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9C7B011BF8EB6900FE3FB3 /* NetworkManager.swift in Sources */,
+				9B7183A21C022BCF009613B8 /* CatalogJSON.xcdatamodeld in Sources */,
 				9BBB93131BDB1BA800E242D1 /* KeyWaySpecificData.swift in Sources */,
 				9CC70F061BCF3DB5000ACE81 /* CatalogVC.swift in Sources */,
 				9BBB93051BDAA14500E242D1 /* LockPickerVC.swift in Sources */,
+				9CC3278C1BFD71D600CCECD9 /* KeyStyleKit.swift in Sources */,
 				9B36B5D81B7D60EE008298FE /* ViewController.swift in Sources */,
 				9B36B5D61B7D60ED008298FE /* AppDelegate.swift in Sources */,
 				9C9C7AFD1BF8E7B600FE3FB3 /* CatalogData.swift in Sources */,
 				9C80E9DA1BD0A30E0062642E /* Data.swift in Sources */,
-				9C8AC7EC1BD6D1E600CC4627 /* ProgradeStyleKit.swift in Sources */,
 				9BBB93111BDB198700E242D1 /* KeyWayMFData.swift in Sources */,
 				9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */,
 				9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */,
+				9B7183A61C029FDB009613B8 /* Images.swift in Sources */,
 				9CA73BCF1BD1DCDB00E16ED7 /* RightTableViewCell.swift in Sources */,
 				9CC70F041BCF2E53000ACE81 /* LeftTableViewCell.swift in Sources */,
 				9BBB930F1BDB184900E242D1 /* KeyWaySpecificTVC.swift in Sources */,
 				9CDB449B1BEFE6E900DD9001 /* DesignerVC.swift in Sources */,
 				9CA73BD31BD1DFCC00E16ED7 /* LogoTableViewCell.swift in Sources */,
 				9CCC916E1BE834A80040487D /* KeyWaySpecificCell.swift in Sources */,
+				9B7183A51C029FDB009613B8 /* Images+CoreDataProperties.swift in Sources */,
 				9BBB930B1BDAF04C00E242D1 /* KeyWaysTVC.swift in Sources */,
 				9C9C7AFF1BF8E95A00FE3FB3 /* DataManager.swift in Sources */,
-				9CF6412A1BF820FB0087A241 /* KeyStyleKit.swift in Sources */,
 				9B6CF9E51B9BA113000CB9C5 /* progradeLogo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +552,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B7183A01C022BCF009613B8 /* CatalogJSON.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B7183A11C022BCF009613B8 /* CatalogJSON.xcdatamodel */,
+			);
+			currentVersion = 9B7183A11C022BCF009613B8 /* CatalogJSON.xcdatamodel */;
+			path = CatalogJSON.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B36B5CA1B7D60ED008298FE /* Project object */;
 }

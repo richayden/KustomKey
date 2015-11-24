@@ -9,8 +9,7 @@
 import UIKit
 
 protocol LeftTableViewCellDelegate : NSObjectProtocol {
-    func buyButtonHit()
-    
+    //func buyButtonHit()
 }
 
 class LeftTableViewCell: UITableViewCell {
@@ -23,15 +22,10 @@ class LeftTableViewCell: UITableViewCell {
     
     @IBOutlet weak var topSellers: UILabel!
     
-    var delegate:LeftTableViewCellDelegate?
+    //var delegate:LeftTableViewCellDelegate?
     
-  
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        
-
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -39,5 +33,29 @@ class LeftTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.leftImage!.image = nil
+//    }
+//
+//    
+//    func configureLeftCell(item:CatalogData) {
+//        self.leftLabel.text = "\(item.title!)"
+//        self.topSellers.hidden = item.decoration!
+//        self.stars.hidden = item.decoration!
+//        
+//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
+//            var data: NSData?
+//            
+//            let url = NSURL(string:item.imageURL!)
+//            data = NSData(contentsOfURL:url!)
+//            dispatch_async(dispatch_get_main_queue()) {
+//                if data != nil {
+//                    //self.leftImage!.hnk_setImageFromURL(url!)
+//                    self.leftImage!.image = UIImage(data:data!)
+//                }
+//            }
+//        }
+//    }
 }
