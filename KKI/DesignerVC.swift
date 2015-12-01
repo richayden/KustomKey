@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import PKHUD
 import CoreGraphics
-
-class DesignerVC: UIViewController, UITextFieldDelegate {
+@IBDesignable
+class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
     @IBOutlet weak var lineOneLabel: UILabel!
     @IBOutlet weak var lineTwoLabel: UILabel!
@@ -39,23 +40,38 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var arcText: UIImageView!
     
+    
+    @IBOutlet weak var toolbar: UIToolbar!
+    
+    @IBOutlet weak var clearButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var previewButton: UIBarButtonItem!
+    @IBOutlet weak var selectButton: UIBarButtonItem!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     let brassColor = UIColor(red: 199/255, green: 176/255, blue: 107/255, alpha: 1.0)
     let darkBrass = UIColor(red: 76/255, green: 66/255, blue: 9/255, alpha: 1.0)
     
     let nickelColor = UIColor(red: 198/255, green: 198/255, blue: 177/255, alpha: 1.0)
     let darkNickel = UIColor(red: 89/255, green: 75/255, blue: 40/255, alpha: 1.0)
     
+    let appGreen = UIColor(red: 200/255, green: 201/255, blue: 167/255, alpha: 1.0)
+    
     let black = UIColor.blackColor()
     
     var swipeKeyStyle: Bool?
     
+    var checkOne:Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Sets view title
-        self.title = "Designer"
-        //Fixes Nav Bar Anomaly
+//        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Enter Your Company Info\n" + "i.e., COMPANY\n" + "LOCKSMITH\n" + "312-555-1234")
+//        PKHUD.sharedHUD.show()
+//        PKHUD.sharedHUD.hide(afterDelay: 4.0)
         
+        //Fixes Nav Bar Anomaly
         self.navigationController!.navigationBar.translucent = false
         
         self.lineOneTextField.delegate = self
@@ -68,12 +84,14 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
         //Initial key value
         keyType = 4
         wireView = true
+        swipeKeyStyle = false
+        checkOne = true
 
         self.view.viewWithTag(5)!.setNeedsDisplay()
 
         // Do any additional setup after loading the view.
     }
-    
+        
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool
     {
@@ -106,7 +124,8 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
                 
                 
                 lineOneLabel.hidden = false
-                switchStyle()
+                style5FontSetup()
+                //switchStyle()
                 //lineOneLabel.text = lineOneTextField.text
                 // Text for line one is saved to user defaults
                 //myDefaults.setObject(lineOneTextField.text, forKey: lineOneTextSavedKey)
@@ -137,7 +156,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
                 
                 lineTwoTextField.hidden = true
                 lineThreeTextField.hidden = false
-                switchStyle()
+                //switchStyle()
                 lineThreeTextField.enablesReturnKeyAutomatically = false
                 lineTwoTextField.resignFirstResponder()
                 self.lineThreeTextField.becomeFirstResponder()
@@ -161,10 +180,11 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
                 //lineThreeConstraint.constant = -135
                 
                 lineThreeTextField.hidden = true
-                switchStyle()
+                //switchStyle()
                 //previewButton.hidden = false
                 lineThreeTextField.resignFirstResponder()
                 swipeKeyStyle = true
+                toolbar.hidden = false
             }
         }
         return true
@@ -185,8 +205,8 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
             self.view.viewWithTag(5)!.setNeedsDisplay()
             colorCheck()
             print(keyType)
+            switchStyle()
         }
-        switchStyle()
     }
     
     @IBAction func rightSwipe(sender: UISwipeGestureRecognizer) {
@@ -199,9 +219,9 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
             self.view.viewWithTag(5)!.setNeedsDisplay()
             colorCheck()
             print(keyType)
-            print(colorCheck())
+            //print(colorCheck())
+            switchStyle()
         }
-        switchStyle()
     }
 
     @IBAction func materialChoicePressed(sender: UISegmentedControl) {
@@ -224,33 +244,66 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func previewModePressed(sender: AnyObject) {
+    @IBAction func clearButtonPressed(sender: AnyObject) {
         
-        if previewMode.currentTitle == "Preview Mode" {
-            materialSelector.hidden = false
-            materialSelector.selectedSegmentIndex = 0
-            brassView = true
-            nickelView = false
-            wireView = false
-            previewMode.setTitle("Basic Mode", forState: UIControlState.Normal)
-            switchStyle()
-            colorCheck()
-            self.view.viewWithTag(5)!.setNeedsDisplay()
-        } else {
-            
-        if previewMode.currentTitle == "Basic Mode" {
-            
-            materialSelector.hidden = true
-            materialSelector.selectedSegmentIndex = 0
-            brassView = false
-            nickelView = false
-            wireView = true
-            previewMode.setTitle("Preview Mode", forState: UIControlState.Normal)
-            switchStyle()
-            colorCheck()
-            self.view.viewWithTag(5)!.setNeedsDisplay()
-            }
-        }
+        //navigationController!.popViewControllerAnimated(true)
+
+        
+        lineOneLabel.hidden = true
+        lineTwoLabel.hidden = true
+        lineThreeLabel.hidden = true
+        
+        lineOneLabel.text = nil
+        lineTwoLabel.text = nil
+        lineThreeLabel.text = nil
+        lineOneLabel.text = lineOneTextField.text
+
+        lineOneTextField.hidden = false
+        lineOneTextField.text = nil
+        lineTwoTextField.text = nil
+        lineThreeTextField.text = nil
+        swipeKeyStyle = false
+        
+        textOneConstraint.constant = -84
+        textTwoConstraint.constant = -112
+        textThreeConstraint.constant = -138
+        
+        arcText.hidden = true
+        checkOne = false
+        switchStyle()
+        //style5FontSetup()
+        
+        descriptionLabel.text = "Neuter Bow Designer"
+        keyType = 4
+        print("This is \(keyType)")
+        wireView = true
+        self.view.viewWithTag(5)!.setNeedsDisplay()
+    }
+    
+    @IBAction func previewIconButton(sender: AnyObject) {
+        previewButton.tintColor = UIColor(red: 0/256, green: 122/256, blue: 255/256, alpha: 1.0)
+        editButton.tintColor = UIColor.darkGrayColor()
+        materialSelector.hidden = false
+        materialSelector.selectedSegmentIndex = 0
+        brassView = true
+        nickelView = false
+        wireView = false
+        switchStyle()
+        colorCheck()
+        self.view.viewWithTag(5)!.setNeedsDisplay()
+    }
+    
+    @IBAction func editButtonPressed(sender: AnyObject) {
+        editButton.tintColor = UIColor(red: 0/256, green: 122/256, blue: 255/256, alpha: 1.0)
+        previewButton.tintColor = UIColor.darkGrayColor()
+        materialSelector.hidden = true
+        materialSelector.selectedSegmentIndex = 0
+        brassView = false
+        nickelView = false
+        wireView = true
+        switchStyle()
+        colorCheck()
+        self.view.viewWithTag(5)!.setNeedsDisplay()
     }
     
     func style1FontSetup() {
@@ -294,7 +347,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
     
     func style5FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
+            if checkOne == false {
+                return
+            } else {
+              checkForStyle1()
+                checkOne = true
+            }
             checkForStyle4()
             lineOneConstraint.constant = -81
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
@@ -346,24 +404,31 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
     
     func switchStyle() {
         if keyType == 1 || brassType == 1 || nickelType == 1 {
+            descriptionLabel.text! = "Incised Style 1"
             style1FontSetup()
         }
         if keyType == 2 || brassType == 2 || nickelType == 2 {
+            descriptionLabel.text! = "Incised Style 2"
             style2FontSetup()
         }
         if keyType == 3 || brassType == 3 || nickelType == 3 {
+            descriptionLabel.text! = "Incised Style 4"
             style4FontSetup()
         }
         if keyType == 4 || brassType == 4 || nickelType == 4 {
+            descriptionLabel.text! = "Incised Style 5"
             style5FontSetup()
         }
         if keyType == 5 || brassType == 5 || nickelType == 5 {
+            descriptionLabel.text! = "Incised Style 6"
             style6FontSetup()
         }
         if keyType == 6 || brassType == 6 || nickelType == 6 {
+            descriptionLabel.text! = "Incised Style 8"
             style8FontSetup()
         }
         if keyType == 7 || brassType == 7 || nickelType == 7 {
+            descriptionLabel.text! = "Embossed"
             styleEFontSetup()
         }
         self.view.setNeedsDisplay()
@@ -471,7 +536,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate {
                 lineOneLabel_.hidden = true
                 arcText.hidden = false
                 //////
-                let size = CGSize(width: 256, height: 256)
+                let size = CGSize(width: 360, height: 360)
                 
                 UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
                 let context = UIGraphicsGetCurrentContext()!

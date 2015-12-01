@@ -7,8 +7,6 @@ use_frameworks!
 
 target 'Kustom Key' do
 
-pod 'Alamofire'
-pod "SwiftyJSON", ">= 2.2"
 pod "PKHUD"
 
 end

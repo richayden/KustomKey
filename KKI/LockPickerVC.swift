@@ -31,7 +31,6 @@ class LockPickerVC: UIViewController, UIPickerViewDataSource,  UIPickerViewDeleg
         lockFinishPicker.dataSource = self
         lockFinishPicker.delegate = self
     }
-    ///
     
     func endEditingNow(){
         self.view.endEditing(true)
@@ -70,26 +69,20 @@ class LockPickerVC: UIViewController, UIPickerViewDataSource,  UIPickerViewDeleg
         return true
     }
 
-    
-    /////
-    
-        func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         if pickerView == lockFinishPicker {
             return 1
         }
         return 0
     }
     
-        func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            if pickerView == lockFinishPicker {
-                return pickerDataSource.count
-            }
-            return 0
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == lockFinishPicker {
+            return pickerDataSource.count
+        }
+        return 0
     }
     
-//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//            return pickerDataSource[row]
-//    }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -111,10 +104,12 @@ class LockPickerVC: UIViewController, UIPickerViewDataSource,  UIPickerViewDeleg
     }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        pickerView.subviews[1].hidden = true
+        pickerView.subviews[2].hidden = true
         var pickerLabel = UILabel()
         pickerLabel.textColor = UIColor.blackColor()
         pickerLabel.text = pickerDataSource[row]
-        pickerLabel.font = UIFont(name: "AvenirNextCondensed-Regular", size: 18) // In this use your custom font
+        //pickerLabel.font = UIFont(name: "AvenirNextCondensed-Regular", size: 18) // In this use your custom font
         pickerLabel.textAlignment = NSTextAlignment.Center
         return pickerLabel
     }

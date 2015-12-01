@@ -15,6 +15,7 @@
 		9B36B5E01B7D60EE008298FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DE1B7D60EE008298FE /* LaunchScreen.storyboard */; };
 		9B4FBD281B84F96500D9C8E0 /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */; };
 		9B4FBD2C1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */; };
+		9B5310A71C06B20600BFF6F2 /* LargeBow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5310A61C06B20600BFF6F2 /* LargeBow.swift */; };
 		9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CA35A1B877B67009EC19A /* extensions.swift */; };
 		9B6CF9E51B9BA113000CB9C5 /* progradeLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */; };
 		9B7183A21C022BCF009613B8 /* CatalogJSON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A01C022BCF009613B8 /* CatalogJSON.xcdatamodeld */; };
@@ -30,6 +31,8 @@
 		9BBCE2231BDD702500E9A95C /* KeyWayData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BBCE2221BDD702500E9A95C /* KeyWayData.plist */; };
 		9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD678BA1B8E41510066C9CE /* Styles.swift */; };
 		9C80E9DA1BD0A30E0062642E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E9D91BD0A30E0062642E /* Data.swift */; };
+		9C9088561C0D14E200EE76DA /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9088551C0D14E200EE76DA /* KeyStyleKit.swift */; };
+		9C9088581C0D153000EE76DA /* ProgradeStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9088571C0D153000EE76DA /* ProgradeStyleKit.swift */; };
 		9C9C7AFD1BF8E7B600FE3FB3 /* CatalogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */; };
 		9C9C7AFF1BF8E95A00FE3FB3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7AFE1BF8E95A00FE3FB3 /* DataManager.swift */; };
 		9C9C7B011BF8EB6900FE3FB3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7B001BF8EB6900FE3FB3 /* NetworkManager.swift */; };
@@ -37,7 +40,6 @@
 		9CA73BCF1BD1DCDB00E16ED7 /* RightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA73BCE1BD1DCDB00E16ED7 /* RightTableViewCell.swift */; };
 		9CA73BD11BD1DEE900E16ED7 /* logoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA73BD01BD1DEE900E16ED7 /* logoCell.xib */; };
 		9CA73BD31BD1DFCC00E16ED7 /* LogoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA73BD21BD1DFCC00E16ED7 /* LogoTableViewCell.swift */; };
-		9CC3278C1BFD71D600CCECD9 /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3278B1BFD71D500CCECD9 /* KeyStyleKit.swift */; };
 		9CC70F021BCF2C9E000ACE81 /* leftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC70F011BCF2C9E000ACE81 /* leftCell.xib */; };
 		9CC70F041BCF2E53000ACE81 /* LeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC70F031BCF2E53000ACE81 /* LeftTableViewCell.swift */; };
 		9CC70F061BCF3DB5000ACE81 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC70F051BCF3DB5000ACE81 /* CatalogVC.swift */; };
@@ -57,6 +59,7 @@
 		9B36B5E11B7D60EE008298FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4FBD271B84F96500D9C8E0 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
 		9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
+		9B5310A61C06B20600BFF6F2 /* LargeBow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeBow.swift; sourceTree = "<group>"; };
 		9B5CA35A1B877B67009EC19A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progradeLogo.swift; sourceTree = "<group>"; };
 		9B7183A11C022BCF009613B8 /* CatalogJSON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatalogJSON.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 		9BBCE2221BDD702500E9A95C /* KeyWayData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyWayData.plist; sourceTree = "<group>"; };
 		9BD678BA1B8E41510066C9CE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		9C80E9D91BD0A30E0062642E /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		9C9088551C0D14E200EE76DA /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
+		9C9088571C0D153000EE76DA /* ProgradeStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgradeStyleKit.swift; sourceTree = "<group>"; };
 		9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogData.swift; sourceTree = "<group>"; };
 		9C9C7AFE1BF8E95A00FE3FB3 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9C9C7B001BF8EB6900FE3FB3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 		9CA73BCE1BD1DCDB00E16ED7 /* RightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTableViewCell.swift; sourceTree = "<group>"; };
 		9CA73BD01BD1DEE900E16ED7 /* logoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logoCell.xib; sourceTree = "<group>"; };
 		9CA73BD21BD1DFCC00E16ED7 /* LogoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoTableViewCell.swift; sourceTree = "<group>"; };
-		9CC3278B1BFD71D500CCECD9 /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
 		9CC70F011BCF2C9E000ACE81 /* leftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = leftCell.xib; sourceTree = "<group>"; };
 		9CC70F031BCF2E53000ACE81 /* LeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewCell.swift; sourceTree = "<group>"; };
 		9CC70F051BCF3DB5000ACE81 /* CatalogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
@@ -169,8 +173,10 @@
 		9B6C49BF1BC18FCD00C38DAB /* StyleKit */ = {
 			isa = PBXGroup;
 			children = (
-				9CC3278B1BFD71D500CCECD9 /* KeyStyleKit.swift */,
+				9C9088551C0D14E200EE76DA /* KeyStyleKit.swift */,
+				9B5310A61C06B20600BFF6F2 /* LargeBow.swift */,
 				9BD678BA1B8E41510066C9CE /* Styles.swift */,
+				9C9088571C0D153000EE76DA /* ProgradeStyleKit.swift */,
 				9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */,
 			);
 			name = StyleKit;
@@ -368,8 +374,8 @@
 				9B7183A21C022BCF009613B8 /* CatalogJSON.xcdatamodeld in Sources */,
 				9BBB93131BDB1BA800E242D1 /* KeyWaySpecificData.swift in Sources */,
 				9CC70F061BCF3DB5000ACE81 /* CatalogVC.swift in Sources */,
+				9B5310A71C06B20600BFF6F2 /* LargeBow.swift in Sources */,
 				9BBB93051BDAA14500E242D1 /* LockPickerVC.swift in Sources */,
-				9CC3278C1BFD71D600CCECD9 /* KeyStyleKit.swift in Sources */,
 				9B36B5D81B7D60EE008298FE /* ViewController.swift in Sources */,
 				9B36B5D61B7D60ED008298FE /* AppDelegate.swift in Sources */,
 				9C9C7AFD1BF8E7B600FE3FB3 /* CatalogData.swift in Sources */,
@@ -382,6 +388,8 @@
 				9CC70F041BCF2E53000ACE81 /* LeftTableViewCell.swift in Sources */,
 				9BBB930F1BDB184900E242D1 /* KeyWaySpecificTVC.swift in Sources */,
 				9CDB449B1BEFE6E900DD9001 /* DesignerVC.swift in Sources */,
+				9C9088581C0D153000EE76DA /* ProgradeStyleKit.swift in Sources */,
+				9C9088561C0D14E200EE76DA /* KeyStyleKit.swift in Sources */,
 				9CA73BD31BD1DFCC00E16ED7 /* LogoTableViewCell.swift in Sources */,
 				9CCC916E1BE834A80040487D /* KeyWaySpecificCell.swift in Sources */,
 				9B7183A51C029FDB009613B8 /* Images+CoreDataProperties.swift in Sources */,

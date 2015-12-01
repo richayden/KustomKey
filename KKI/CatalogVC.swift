@@ -44,12 +44,10 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
         tableview.delegate = self
         get_data_from_url(json_data_url)
         
-        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("do_table_refresh"), forControlEvents: UIControlEvents.ValueChanged)
-        
         self.refreshControl = refreshControl
-        tableView.delegate = self
+        
         self.title = "Pocket Locksmith"
     }
     
@@ -79,7 +77,7 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(TableData.count)
+        //print(TableData.count)
         return TableData.count
     }
     
@@ -94,8 +92,8 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
         } else {
             print("Nothing here yet!")
         }
-        if indexPath.row == 1 {
-            //performSegueWithIdentifier("toWebTest", sender: nil)
+        if indexPath.row == 2 {
+            performSegueWithIdentifier("largeBowSegue", sender: nil)
         } else {
             print("HAve a nice day!")
         }
@@ -116,6 +114,8 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
             let cell = tableView.dequeueReusableCellWithIdentifier("leftCellID", forIndexPath: indexPath) as! LeftTableViewCell
             let data = TableData[indexPath.row]
             cell.leftLabel!.text = data.title
+            cell.stars.hidden = data.decoration!
+            cell.topSellers.hidden = data.decoration!
             if (data.image == nil) {
                 cell.leftImage!.image = UIImage(named:"splashK")
                 load_image(image_base_url + data.imageurl!, imageview: cell.leftImage!, index: indexPath.row)
@@ -157,29 +157,27 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
     //}
     
     func get_data_from_url(url:String) {
-            PKHUD.sharedHUD.contentView = PKHUDProgressView()
-            PKHUD.sharedHUD.show()
-            self.refreshControl?.endRefreshing()
-            let url:NSURL = NSURL(string: url)!
-            let session = NSURLSession.sharedSession()
-            let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "GET"
-            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-            let task = session.dataTaskWithRequest(request) {
-                (let data, let response, let error) in
-                
-                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                    print("error")
-                    return
-                }
-                let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
-                self.extract_json(json!)
+        
+        let url:NSURL = NSURL(string: url)!
+        let session = NSURLSession.sharedSession()
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        let task = session.dataTaskWithRequest(request) {
+            (let data, let response, let error) in
+            
+            guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                print("error")
+                return
             }
-            task.resume()
-            PKHUD.sharedHUD.hide()
+            let json = NSString(data: data!, encoding: NSASCIIStringEncoding)
+            self.extract_json(json!)
         }
+        task.resume()
+    }
     
     func extract_json(data:NSString) {
+        
         var parseError: NSError?
         let jsonData:NSData = data.dataUsingEncoding(NSASCIIStringEncoding)!
         let json: AnyObject?
@@ -190,8 +188,9 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
             json = nil
         }
         if (parseError == nil) {
+            
             if let list = json as? NSArray {
-                for (var i = 0; i < list.count ; i++ ) {
+                for (var i = 0; i < list.count; i++ ) {
                     if let data_block = list[i] as? NSDictionary {
                         TableData.append(datastruct(add: data_block))
                     }
@@ -208,11 +207,12 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
     
     func do_table_refresh() {
         dispatch_async(dispatch_get_main_queue(), {
-            PKHUD.sharedHUD.contentView = PKHUDProgressView()
-            PKHUD.sharedHUD.show()
             self.refreshControl?.endRefreshing()
             self.tableview.reloadData()
-            PKHUD.sharedHUD.hide()
+            PKHUD.sharedHUD.contentView = PKHUDProgressView()
+            PKHUD.sharedHUD.show()
+            //PKHUD.sharedHUD.dimsBackground = true
+            PKHUD.sharedHUD.hide(afterDelay: 0.5)
             return
         })
     }
@@ -237,7 +237,6 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
             }
         }
         task.resume()
-        PKHUD.sharedHUD.hide()
     }
     
     func read() throws {
@@ -251,6 +250,7 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
                 let index = single_result.valueForKey("index") as! NSInteger
                 let img: NSData? = single_result.valueForKey("image") as? NSData
                 TableData[index].image = UIImage(data: img!)
+                print(single_result)
             }
         } catch {
             print("error")

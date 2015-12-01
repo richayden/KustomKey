@@ -84,12 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Kustom Key/Alamofire.framework"
   install_framework "Pods-Kustom Key/PKHUD.framework"
-  install_framework "Pods-Kustom Key/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Kustom Key/Alamofire.framework"
   install_framework "Pods-Kustom Key/PKHUD.framework"
-  install_framework "Pods-Kustom Key/SwiftyJSON.framework"
 fi
