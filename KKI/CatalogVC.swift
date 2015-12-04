@@ -83,20 +83,18 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-        performSegueWithIdentifier("neuterBowSegue", sender: nil)
-        } else {
-            print("Nothing here yet!")
+            performSegueWithIdentifier("neuterBowSegue", sender: nil)
         }
-        if indexPath.row == 5 {
-            performSegueWithIdentifier("5762segue", sender: nil)
-        } else {
-            print("Nothing here yet!")
+        if indexPath.row == 1 {
+            performSegueWithIdentifier("j3Segue", sender: nil)
         }
         if indexPath.row == 2 {
             performSegueWithIdentifier("largeBowSegue", sender: nil)
-        } else {
-            print("HAve a nice day!")
         }
+        if indexPath.row == 5 {
+            performSegueWithIdentifier("5762segue", sender: nil)
+        }
+        
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -552,6 +552,26 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="usi-xI-QyW"/>
+                                    <barButtonItem style="plain" id="W9k-yg-UL6">
+                                        <segmentedControl key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="BH7-ce-vWf">
+                                            <rect key="frame" x="232" y="8" width="100" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="Wjk-tn-mT3"/>
+                                                <constraint firstAttribute="width" constant="172" id="hYF-9V-YZ3"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="Brass"/>
+                                                <segment title="Nickel"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="materialChoicePressed:" destination="nrw-nN-nad" eventType="valueChanged" id="tgr-eg-Bo1"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aiI-22-LNb"/>
                                     <barButtonItem title="Preview" style="plain" id="mnb-lH-MV4">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -565,7 +585,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7ya-sB-9aX"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neuter Bow Designer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emP-Lm-dAd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emP-Lm-dAd">
                                 <rect key="frame" x="234" y="82" width="134" height="25"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
@@ -585,6 +605,7 @@
                             <constraint firstItem="1Co-aJ-oxD" firstAttribute="leading" secondItem="oig-Db-ehg" secondAttribute="leadingMargin" constant="55" id="Dd0-HL-WKV"/>
                             <constraint firstItem="oLS-GA-sGV" firstAttribute="centerX" secondItem="oig-Db-ehg" secondAttribute="centerX" id="FEM-K2-Mxg"/>
                             <constraint firstItem="OHD-NM-koB" firstAttribute="centerX" secondItem="oig-Db-ehg" secondAttribute="centerX" id="FZe-8W-4R2"/>
+                            <constraint firstItem="DZT-BL-gQg" firstAttribute="centerY" secondItem="oig-Db-ehg" secondAttribute="centerY" id="KMb-es-gwZ"/>
                             <constraint firstItem="DZT-BL-gQg" firstAttribute="top" secondItem="oLS-GA-sGV" secondAttribute="bottom" constant="-97" id="KZV-bC-ftu"/>
                             <constraint firstItem="DZT-BL-gQg" firstAttribute="top" secondItem="1Co-aJ-oxD" secondAttribute="bottom" constant="-70" id="Ket-DW-22V"/>
                             <constraint firstItem="xby-N8-0f9" firstAttribute="leading" secondItem="oig-Db-ehg" secondAttribute="leadingMargin" constant="-24" id="KvL-M1-plk"/>
@@ -617,23 +638,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="KPf-xj-r8m">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="BH7-ce-vWf">
-                            <rect key="frame" x="214" y="8" width="172" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="28" id="Wjk-tn-mT3"/>
-                                <constraint firstAttribute="width" constant="172" id="hYF-9V-YZ3"/>
-                            </constraints>
-                            <segments>
-                                <segment title="Brass"/>
-                                <segment title="Nickel"/>
-                            </segments>
-                            <connections>
-                                <action selector="materialChoicePressed:" destination="nrw-nN-nad" eventType="valueChanged" id="tgr-eg-Bo1"/>
-                            </connections>
-                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="acp-0h-9pO">
                             <connections>
                                 <segue destination="jNK-wX-zyA" kind="show" identifier="keyWaysID" id="u48-c2-cAU"/>
@@ -675,12 +679,12 @@
                         <action selector="leftSwipe:" destination="nrw-nN-nad" id="SK4-ur-oM0"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <customObject id="ybk-jX-gda" customClass="KeyStyleKit" customModule="Kustom_Key" customModuleProvider="target">
+                <customObject id="ybk-jX-gda" customClass="IconStyleKit" customModule="Kustom_Key" customModuleProvider="target">
                     <connections>
                         <outletCollection property="previewTargets" destination="mnb-lH-MV4" collectionClass="NSMutableArray" id="Xea-ZE-HIL"/>
-                        <outletCollection property="pencilTargets" destination="2MM-a7-hoA" collectionClass="NSMutableArray" id="2bm-rh-7Ai"/>
-                        <outletCollection property="clearTargets" destination="yK9-5y-vbp" collectionClass="NSMutableArray" id="bHj-vn-YSM"/>
                         <outletCollection property="selectTargets" destination="IZA-vZ-4Df" collectionClass="NSMutableArray" id="mJA-c1-UbW"/>
+                        <outletCollection property="pencilTargets" destination="2MM-a7-hoA" collectionClass="NSMutableArray" id="5VP-l6-5UI"/>
+                        <outletCollection property="clearTargets" destination="yK9-5y-vbp" collectionClass="NSMutableArray" id="21T-FS-d2i"/>
                     </connections>
                 </customObject>
             </objects>

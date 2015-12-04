@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 import CoreGraphics
-@IBDesignable
+//@IBDesignable
 class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
     @IBOutlet weak var lineOneLabel: UILabel!
@@ -67,10 +67,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Enter Your Company Info\n" + "i.e., COMPANY\n" + "LOCKSMITH\n" + "312-555-1234")
-//        PKHUD.sharedHUD.show()
-//        PKHUD.sharedHUD.hide(afterDelay: 4.0)
-        
+        self.title = "Neuter Bow Designer"
         //Fixes Nav Bar Anomaly
         self.navigationController!.navigationBar.translucent = false
         
@@ -116,7 +113,8 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
-                
+                //let undo: UILabel = undoManager?.prepareWithInvocationTarget(lineOneLabel) as! UILabel
+
                 lineOneLabel.text = lineOneTextField.text
                 //lineOneLabel.textAlignment = NSTextAlignment.Center
                 //lineOneConstraint.constant = -81
@@ -246,37 +244,6 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     @IBAction func clearButtonPressed(sender: AnyObject) {
         
-        //navigationController!.popViewControllerAnimated(true)
-
-        
-        lineOneLabel.hidden = true
-        lineTwoLabel.hidden = true
-        lineThreeLabel.hidden = true
-        
-        lineOneLabel.text = nil
-        lineTwoLabel.text = nil
-        lineThreeLabel.text = nil
-        lineOneLabel.text = lineOneTextField.text
-
-        lineOneTextField.hidden = false
-        lineOneTextField.text = nil
-        lineTwoTextField.text = nil
-        lineThreeTextField.text = nil
-        swipeKeyStyle = false
-        
-        textOneConstraint.constant = -84
-        textTwoConstraint.constant = -112
-        textThreeConstraint.constant = -138
-        
-        arcText.hidden = true
-        checkOne = false
-        switchStyle()
-        //style5FontSetup()
-        
-        descriptionLabel.text = "Neuter Bow Designer"
-        keyType = 4
-        print("This is \(keyType)")
-        wireView = true
         self.view.viewWithTag(5)!.setNeedsDisplay()
     }
     
@@ -347,12 +314,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func style5FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            if checkOne == false {
-                return
-            } else {
-              checkForStyle1()
-                checkOne = true
-            }
+            checkForStyle1()
             checkForStyle4()
             lineOneConstraint.constant = -81
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)

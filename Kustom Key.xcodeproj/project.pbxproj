@@ -17,11 +17,15 @@
 		9B4FBD2C1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */; };
 		9B5310A71C06B20600BFF6F2 /* LargeBow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5310A61C06B20600BFF6F2 /* LargeBow.swift */; };
 		9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CA35A1B877B67009EC19A /* extensions.swift */; };
+		9B60EB0B1C0FB8980042A777 /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B60EB0A1C0FB8980042A777 /* KeyStyleKit.swift */; };
 		9B6CF9E51B9BA113000CB9C5 /* progradeLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */; };
 		9B7183A21C022BCF009613B8 /* CatalogJSON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A01C022BCF009613B8 /* CatalogJSON.xcdatamodeld */; };
 		9B7183A51C029FDB009613B8 /* Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A31C029FDB009613B8 /* Images+CoreDataProperties.swift */; };
 		9B7183A61C029FDB009613B8 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7183A41C029FDB009613B8 /* Images.swift */; };
 		9B77425B1BF18C4800631E4A /* Avenir Next Condensed.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9B77425A1BF18B0200631E4A /* Avenir Next Condensed.ttc */; };
+		9B7CB58B1C0F617A000F6609 /* IconStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CB58A1C0F617A000F6609 /* IconStyleKit.swift */; };
+		9B7CB5991C0FA10F000F6609 /* J3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CB5981C0FA10F000F6609 /* J3.swift */; };
+		9B7CB59B1C0FAB77000F6609 /* J3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CB59A1C0FAB77000F6609 /* J3VC.swift */; };
 		9B8DC9661B9AA44000818D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B36B5DC1B7D60EE008298FE /* Assets.xcassets */; };
 		9BBB93051BDAA14500E242D1 /* LockPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB93041BDAA14500E242D1 /* LockPickerVC.swift */; };
 		9BBB930B1BDAF04C00E242D1 /* KeyWaysTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB930A1BDAF04C00E242D1 /* KeyWaysTVC.swift */; };
@@ -31,7 +35,6 @@
 		9BBCE2231BDD702500E9A95C /* KeyWayData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BBCE2221BDD702500E9A95C /* KeyWayData.plist */; };
 		9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD678BA1B8E41510066C9CE /* Styles.swift */; };
 		9C80E9DA1BD0A30E0062642E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E9D91BD0A30E0062642E /* Data.swift */; };
-		9C9088561C0D14E200EE76DA /* KeyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9088551C0D14E200EE76DA /* KeyStyleKit.swift */; };
 		9C9088581C0D153000EE76DA /* ProgradeStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9088571C0D153000EE76DA /* ProgradeStyleKit.swift */; };
 		9C9C7AFD1BF8E7B600FE3FB3 /* CatalogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */; };
 		9C9C7AFF1BF8E95A00FE3FB3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C7AFE1BF8E95A00FE3FB3 /* DataManager.swift */; };
@@ -61,11 +64,15 @@
 		9B4FBD2B1B84F98E00D9C8E0 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		9B5310A61C06B20600BFF6F2 /* LargeBow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeBow.swift; sourceTree = "<group>"; };
 		9B5CA35A1B877B67009EC19A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		9B60EB0A1C0FB8980042A777 /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
 		9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progradeLogo.swift; sourceTree = "<group>"; };
 		9B7183A11C022BCF009613B8 /* CatalogJSON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatalogJSON.xcdatamodel; sourceTree = "<group>"; };
 		9B7183A31C029FDB009613B8 /* Images+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B7183A41C029FDB009613B8 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		9B77425A1BF18B0200631E4A /* Avenir Next Condensed.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir Next Condensed.ttc"; sourceTree = "<group>"; };
+		9B7CB58A1C0F617A000F6609 /* IconStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconStyleKit.swift; sourceTree = "<group>"; };
+		9B7CB5981C0FA10F000F6609 /* J3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = J3.swift; sourceTree = "<group>"; };
+		9B7CB59A1C0FAB77000F6609 /* J3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = J3VC.swift; sourceTree = "<group>"; };
 		9BBB93041BDAA14500E242D1 /* LockPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockPickerVC.swift; sourceTree = "<group>"; };
 		9BBB930A1BDAF04C00E242D1 /* KeyWaysTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyWaysTVC.swift; sourceTree = "<group>"; };
 		9BBB930E1BDB184900E242D1 /* KeyWaySpecificTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyWaySpecificTVC.swift; sourceTree = "<group>"; };
@@ -74,7 +81,6 @@
 		9BBCE2221BDD702500E9A95C /* KeyWayData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyWayData.plist; sourceTree = "<group>"; };
 		9BD678BA1B8E41510066C9CE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		9C80E9D91BD0A30E0062642E /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		9C9088551C0D14E200EE76DA /* KeyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStyleKit.swift; sourceTree = "<group>"; };
 		9C9088571C0D153000EE76DA /* ProgradeStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgradeStyleKit.swift; sourceTree = "<group>"; };
 		9C9C7AFC1BF8E7B600FE3FB3 /* CatalogData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogData.swift; sourceTree = "<group>"; };
 		9C9C7AFE1BF8E95A00FE3FB3 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 			children = (
 				9B36B5D71B7D60EE008298FE /* ViewController.swift */,
 				9CDB449A1BEFE6E900DD9001 /* DesignerVC.swift */,
+				9B7CB59A1C0FAB77000F6609 /* J3VC.swift */,
 				9BBB930A1BDAF04C00E242D1 /* KeyWaysTVC.swift */,
 				9BBB930E1BDB184900E242D1 /* KeyWaySpecificTVC.swift */,
 				9BBB93041BDAA14500E242D1 /* LockPickerVC.swift */,
@@ -173,9 +180,11 @@
 		9B6C49BF1BC18FCD00C38DAB /* StyleKit */ = {
 			isa = PBXGroup;
 			children = (
-				9C9088551C0D14E200EE76DA /* KeyStyleKit.swift */,
-				9B5310A61C06B20600BFF6F2 /* LargeBow.swift */,
+				9B60EB0A1C0FB8980042A777 /* KeyStyleKit.swift */,
 				9BD678BA1B8E41510066C9CE /* Styles.swift */,
+				9B7CB5981C0FA10F000F6609 /* J3.swift */,
+				9B5310A61C06B20600BFF6F2 /* LargeBow.swift */,
+				9B7CB58A1C0F617A000F6609 /* IconStyleKit.swift */,
 				9C9088571C0D153000EE76DA /* ProgradeStyleKit.swift */,
 				9B6CF9E41B9BA113000CB9C5 /* progradeLogo.swift */,
 			);
@@ -377,10 +386,13 @@
 				9B5310A71C06B20600BFF6F2 /* LargeBow.swift in Sources */,
 				9BBB93051BDAA14500E242D1 /* LockPickerVC.swift in Sources */,
 				9B36B5D81B7D60EE008298FE /* ViewController.swift in Sources */,
+				9B7CB58B1C0F617A000F6609 /* IconStyleKit.swift in Sources */,
+				9B7CB5991C0FA10F000F6609 /* J3.swift in Sources */,
 				9B36B5D61B7D60ED008298FE /* AppDelegate.swift in Sources */,
 				9C9C7AFD1BF8E7B600FE3FB3 /* CatalogData.swift in Sources */,
 				9C80E9DA1BD0A30E0062642E /* Data.swift in Sources */,
 				9BBB93111BDB198700E242D1 /* KeyWayMFData.swift in Sources */,
+				9B60EB0B1C0FB8980042A777 /* KeyStyleKit.swift in Sources */,
 				9BD678BB1B8E41510066C9CE /* Styles.swift in Sources */,
 				9B5CA35B1B877B67009EC19A /* extensions.swift in Sources */,
 				9B7183A61C029FDB009613B8 /* Images.swift in Sources */,
@@ -388,8 +400,8 @@
 				9CC70F041BCF2E53000ACE81 /* LeftTableViewCell.swift in Sources */,
 				9BBB930F1BDB184900E242D1 /* KeyWaySpecificTVC.swift in Sources */,
 				9CDB449B1BEFE6E900DD9001 /* DesignerVC.swift in Sources */,
+				9B7CB59B1C0FAB77000F6609 /* J3VC.swift in Sources */,
 				9C9088581C0D153000EE76DA /* ProgradeStyleKit.swift in Sources */,
-				9C9088561C0D14E200EE76DA /* KeyStyleKit.swift in Sources */,
 				9CA73BD31BD1DFCC00E16ED7 /* LogoTableViewCell.swift in Sources */,
 				9CCC916E1BE834A80040487D /* KeyWaySpecificCell.swift in Sources */,
 				9B7183A51C029FDB009613B8 /* Images+CoreDataProperties.swift in Sources */,
