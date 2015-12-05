@@ -209,8 +209,8 @@ class CatalogVC: UITableViewController, RightTableViewCellDelegate, LeftTableVie
             self.tableview.reloadData()
             PKHUD.sharedHUD.contentView = PKHUDProgressView()
             PKHUD.sharedHUD.show()
-            //PKHUD.sharedHUD.dimsBackground = true
-            PKHUD.sharedHUD.hide(afterDelay: 0.5)
+            PKHUD.sharedHUD.dimsBackground = true
+            PKHUD.sharedHUD.hide(afterDelay: 0.25)
             return
         })
     }

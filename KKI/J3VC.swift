@@ -19,6 +19,8 @@ class J3VC: UIViewController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "J3 Mid Bow"
+        
         j3brassType = 1
         j3B = true
         swipeKeyStyle = true

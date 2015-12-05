@@ -194,6 +194,7 @@
                         <segue destination="Pga-Qr-E8x" kind="show" identifier="5762segue" id="kQR-74-vJG"/>
                         <segue destination="nrw-nN-nad" kind="show" identifier="neuterBowSegue" id="4S5-yd-7YB"/>
                         <segue destination="3W0-e2-NTN" kind="show" identifier="largeBowSegue" id="SSb-Tm-d5K"/>
+                        <segue destination="TVQ-EZ-eJi" kind="show" identifier="j3Segue" id="OxC-2E-j1X"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HE-mg-GP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -690,6 +691,54 @@
             </objects>
             <point key="canvasLocation" x="2802" y="-299"/>
         </scene>
+        <!--J3VC-->
+        <scene sceneID="j6b-Vu-fUH">
+            <objects>
+                <viewController id="TVQ-EZ-eJi" customClass="J3VC" customModule="Kustom_Key" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Mh-Nt-nHH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uzx-dr-ShK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8JY-lO-uB1" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-GR-KUr" customClass="J3" customModule="Kustom_Key" customModuleProvider="target">
+                                <rect key="frame" x="214" y="104" width="172" height="435"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fY0-GR-KUr" firstAttribute="top" secondItem="0Mh-Nt-nHH" secondAttribute="bottom" constant="40" id="Y2o-AX-bqD"/>
+                            <constraint firstItem="fY0-GR-KUr" firstAttribute="centerX" secondItem="8JY-lO-uB1" secondAttribute="centerX" id="n2c-tg-glZ"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="O4R-IB-qeI" appends="YES" id="W2v-YM-5R7"/>
+                            <outletCollection property="gestureRecognizers" destination="JUf-ze-Lws" appends="YES" id="H36-4M-lwW"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="j3View" destination="fY0-GR-KUr" id="uiI-Rz-3q6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLi-05-ccC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="O4R-IB-qeI" userLabel="Swipe Right">
+                    <connections>
+                        <action selector="rightSwipe:" destination="TVQ-EZ-eJi" id="QK5-J0-eeA"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="JUf-ze-Lws" userLabel="Swipe Left">
+                    <connections>
+                        <action selector="leftSwipe:" destination="TVQ-EZ-eJi" id="gUj-HH-RUX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2802" y="498"/>
+        </scene>
         <!--LargeBow-->
         <scene sceneID="r54-lN-0LN">
             <objects>
@@ -718,7 +767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIx-I5-ZgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2738" y="557"/>
+            <point key="canvasLocation" x="2802" y="1221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fbs-fG-Wne">

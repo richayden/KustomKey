@@ -62,7 +62,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     var swipeKeyStyle: Bool?
     
-    var checkOne:Bool?
+    var clearPressed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,8 +82,6 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         keyType = 4
         wireView = true
         swipeKeyStyle = false
-        checkOne = true
-
         self.view.viewWithTag(5)!.setNeedsDisplay()
 
         // Do any additional setup after loading the view.
@@ -244,7 +242,45 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     @IBAction func clearButtonPressed(sender: AnyObject) {
         
-        self.view.viewWithTag(5)!.setNeedsDisplay()
+        clearPressed = true
+        
+        swipeKeyStyle = false
+        keyType = 4
+        wireView = true
+        lineOneLabel.hidden = true
+        lineOneLabel.text = ""
+        
+        lineTwoLabel.hidden = true
+        lineTwoLabel.text = ""
+        
+        lineThreeLabel.hidden = true
+        lineThreeLabel.text = ""
+        
+        lineOneTextField.hidden = false
+        lineOneTextField.text = ""
+        
+        lineTwoTextField.hidden = true
+        lineTwoTextField.text = ""
+        
+        lineThreeTextField.hidden = true
+        lineThreeTextField.text = ""
+        
+        descriptionLabel.text = ""
+        
+        arcText.hidden = true
+        
+        lineOneConstraint.constant = -81
+        lineOneLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
+        lineTwoConstraint.constant = -108
+        lineTwoLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
+        lineThreeConstraint.constant = -135
+        lineThreeLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
+        
+        keyView.setNeedsDisplay()
+
+        
+        //self.view.viewWithTag(5)!.setNeedsDisplay()
+        //self.view.setNeedsDisplay()
     }
     
     @IBAction func previewIconButton(sender: AnyObject) {
@@ -274,11 +310,49 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     }
     
     func style1FontSetup() {
-        if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
-            lineOneConstraint.constant = -78
-            lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 24)
+        if let lineOneLabel_ = lineOneLabel {
+            
+//            lineOneConstraint.constant = -78
+//            lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 24)
+            
+                if keyType == 1 || brassType == 1 || nickelType == 1 {
+                    lineOneLabel_.hidden = true
+                    arcText.hidden = false
+                    //////
+                    let size = CGSize(width: 360, height: 360)
+                    
+                    UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+                    let context = UIGraphicsGetCurrentContext()!
+                    // *******************************************************************
+                    // Scale & translate the context to have 0,0
+                    // at the centre of the screen maths convention
+                    // Obviously change your origin to suit...
+                    // *******************************************************************
+                    CGContextTranslateCTM (context, size.width / 2, size.height / 2)
+                    CGContextScaleCTM (context, 1, -1)
+                    if nickelView == true && nickelType != 7 {
+                        centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: darkNickel, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
+                    }
+                    if brassView == true && brassType != 7 {
+                        centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: darkBrass, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
+                    }
+                    if wireView == true {
+                        centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: black, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
+                    }
+                    let image = UIGraphicsGetImageFromCurrentImageContext()
+                    image
+                    UIGraphicsEndImageContext()
+                    arcText.image = image
+                    
+                    ////////
+                } else {
+                    lineOneLabel_.hidden = false
+                    arcText.hidden = true
+                }
+            }
+
+        if let lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
+            lineThreeLabel_.hidden = false
             lineTwoConstraint.constant = -120
             lineTwoLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 22)
             lineThreeConstraint.constant = -141
@@ -288,8 +362,11 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func style2FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
+            //checkForStyle1()
+            lineOneLabel_.hidden = false
+            arcText.hidden = true
+            lineThreeLabel_.hidden = false
+            //checkForStyle4()
             lineOneConstraint.constant = -84
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 26)
             lineTwoConstraint.constant = -113
@@ -301,8 +378,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func style4FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
+            //checkForStyle1()
+            lineOneLabel_.hidden = false
+            arcText.hidden = true
+            lineThreeLabel_.hidden = true
+
+            //checkForStyle4()
             lineOneConstraint.constant = -80
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 22)
             lineTwoConstraint.constant = -100
@@ -314,8 +395,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func style5FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
+            //checkForStyle1()
+            lineOneLabel_.hidden = false
+            arcText.hidden = true
+            lineThreeLabel_.hidden = false
+
+            //checkForStyle4()
             lineOneConstraint.constant = -81
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
             lineTwoConstraint.constant = -108
@@ -327,8 +412,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func style6FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
+            //checkForStyle1()
+            lineOneLabel_.hidden = false
+            arcText.hidden = true
+            lineThreeLabel_.hidden = false
+
+            //checkForStyle4()
             lineOneConstraint.constant = -81
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 22)
             lineTwoConstraint.constant = -101
@@ -340,8 +429,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func style8FontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
+            //checkForStyle1()
+            lineOneLabel_.hidden = false
+            arcText.hidden = true
+            lineThreeLabel_.hidden = false
+
+            //checkForStyle4()
             lineOneConstraint.constant = -78
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Light", size: 24)
             lineTwoConstraint.constant = -100
@@ -353,8 +446,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     func styleEFontSetup() {
         if let lineOneLabel_ = lineOneLabel, lineTwoLabel_ = lineTwoLabel, lineThreeLabel_ = lineThreeLabel {
-            checkForStyle1()
-            checkForStyle4()
+            //checkForStyle1()
+            lineOneLabel_.hidden = false
+            lineThreeLabel_.hidden = false
+            arcText.hidden = true
+
+            //checkForStyle4()
             lineOneConstraint.constant = -78
             lineOneLabel_.font = UIFont(name: "AvenirLTStd-Black", size: 23)
             lineTwoConstraint.constant = -102
@@ -481,56 +578,56 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         }
     }
     
-    func checkForStyle4() {
-        if let lineThreeLabel_ = lineThreeLabel {
-            if keyType == 3 || brassType == 3 || nickelType == 3 {
-                lineThreeLabel_.hidden = true
-            } else {
-                lineThreeLabel_.hidden = false
-            }
-        }
-    }
+//    func checkForStyle4() {
+//        if let lineThreeLabel_ = lineThreeLabel {
+//            if keyType == 3 || brassType == 3 || nickelType == 3 {
+//                lineThreeLabel_.hidden = true
+//            } else {
+//                lineThreeLabel_.hidden = false
+//            }
+//        }
+//    }
     
-    func checkForStyle1() {
-        
-        if let lineOneLabel_ = lineOneLabel {
-            if keyType == 1 || brassType == 1 || nickelType == 1 {
-                lineOneLabel_.hidden = true
-                arcText.hidden = false
-                //////
-                let size = CGSize(width: 360, height: 360)
-                
-                UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-                let context = UIGraphicsGetCurrentContext()!
-                // *******************************************************************
-                // Scale & translate the context to have 0,0
-                // at the centre of the screen maths convention
-                // Obviously change your origin to suit...
-                // *******************************************************************
-                CGContextTranslateCTM (context, size.width / 2, size.height / 2)
-                CGContextScaleCTM (context, 1, -1)
-                if nickelView == true && nickelType != 7 {
-                centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: darkNickel, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
-                }
-                if brassView == true && brassType != 7 {
-                centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: darkBrass, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
-                }
-                if wireView == true {
-                centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: black, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
-                }
-                let image = UIGraphicsGetImageFromCurrentImageContext()
-                image
-                UIGraphicsEndImageContext()
-                arcText.image = image
-                
-                ////////
-            } else {
-                lineOneLabel_.hidden = false
-                arcText.hidden = true
-            }
-        }
-        
-    }
+//    func checkForStyle1() {
+//        
+//        if let lineOneLabel_ = lineOneLabel {
+//            if keyType == 1 || brassType == 1 || nickelType == 1 {
+//                lineOneLabel_.hidden = true
+//                arcText.hidden = false
+//                //////
+//                let size = CGSize(width: 360, height: 360)
+//                
+//                UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+//                let context = UIGraphicsGetCurrentContext()!
+//                // *******************************************************************
+//                // Scale & translate the context to have 0,0
+//                // at the centre of the screen maths convention
+//                // Obviously change your origin to suit...
+//                // *******************************************************************
+//                CGContextTranslateCTM (context, size.width / 2, size.height / 2)
+//                CGContextScaleCTM (context, 1, -1)
+//                if nickelView == true && nickelType != 7 {
+//                centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: darkNickel, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
+//                }
+//                if brassView == true && brassType != 7 {
+//                centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: darkBrass, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
+//                }
+//                if wireView == true {
+//                centreArcPerpendicularText(lineOneTextField.text!, context: context, radius: 100, angle: CGFloat(M_PI_2), colour: black, font: UIFont(name: "AvenirLTStd-Light", size: 23)!, clockwise: true)
+//                }
+//                let image = UIGraphicsGetImageFromCurrentImageContext()
+//                image
+//                UIGraphicsEndImageContext()
+//                arcText.image = image
+//                
+//                ////////
+//            } else {
+//                lineOneLabel_.hidden = false
+//                arcText.hidden = true
+//            }
+//        }
+//        
+//    }
 
     /*
     // MARK: - Navigation
