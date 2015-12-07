@@ -62,8 +62,6 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     var swipeKeyStyle: Bool?
     
-    var clearPressed = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -181,6 +179,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
                 lineThreeTextField.resignFirstResponder()
                 swipeKeyStyle = true
                 toolbar.hidden = false
+                //descriptionLabel.text = "Incised Style 5"
             }
         }
         return true
@@ -190,8 +189,28 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func viewMoveInFromLeft(nextView:UIView!,aniTime:Float!,animoteKey:String!){
+        let animation:CATransition = CATransition()
+        animation.duration = CFTimeInterval(aniTime)
+        animation.type = "moveIn"
+        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
+        animation.subtype = "fromLeft"
+        animation.fillMode = "forwards"
+        nextView.layer.addAnimation(animation, forKey: animoteKey)
+    }
+    
+    func viewMoveInFromRight(nextView:UIView!,aniTime:Float!,animoteKey:String!){
+        let animation:CATransition = CATransition()
+        animation.duration = CFTimeInterval(aniTime)
+        animation.type = "moveIn"
+        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
+        animation.subtype = "fromRight"
+        animation.fillMode = "forwards"
+        nextView.layer.addAnimation(animation, forKey: animoteKey)
+    }
     
     @IBAction func leftSwipe(sender: UISwipeGestureRecognizer) {
+        viewMoveInFromRight(self.view.viewWithTag(5), aniTime: 0.2, animoteKey: "")
         if swipeKeyStyle == true {
             if keyType == 7 || brassType == 7 || nickelType == 7 {
                 keyType = 1; brassType = 1; nickelType = 1
@@ -206,6 +225,7 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     }
     
     @IBAction func rightSwipe(sender: UISwipeGestureRecognizer) {
+        viewMoveInFromLeft(self.view.viewWithTag(5), aniTime: 0.2, animoteKey: "")
         if swipeKeyStyle == true {
             if keyType == 1 || brassType == 1 || nickelType == 1 {
                 keyType = 7; brassType = 7; nickelType = 7
@@ -242,8 +262,6 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     
     @IBAction func clearButtonPressed(sender: AnyObject) {
         
-        clearPressed = true
-        
         swipeKeyStyle = false
         keyType = 4
         wireView = true
@@ -269,12 +287,12 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         
         arcText.hidden = true
         
-        lineOneConstraint.constant = -81
-        lineOneLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
-        lineTwoConstraint.constant = -108
-        lineTwoLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
-        lineThreeConstraint.constant = -135
-        lineThreeLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
+//        lineOneConstraint.constant = -81
+//        lineOneLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
+//        lineTwoConstraint.constant = -108
+//        lineTwoLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
+//        lineThreeConstraint.constant = -135
+//        lineThreeLabel.font = UIFont(name: "AvenirLTStd-Light", size: 25.5)
         
         keyView.setNeedsDisplay()
 
@@ -288,6 +306,9 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         editButton.tintColor = UIColor.darkGrayColor()
         materialSelector.hidden = false
         materialSelector.selectedSegmentIndex = 0
+        clearButton.enabled = false
+        selectButton.enabled = false
+        
         brassView = true
         nickelView = false
         wireView = false
@@ -301,6 +322,8 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         previewButton.tintColor = UIColor.darkGrayColor()
         materialSelector.hidden = true
         materialSelector.selectedSegmentIndex = 0
+        clearButton.enabled = true
+        selectButton.enabled = true
         brassView = false
         nickelView = false
         wireView = true

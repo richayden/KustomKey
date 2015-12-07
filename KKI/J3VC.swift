@@ -35,8 +35,28 @@ class J3VC: UIViewController, UITabBarControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func viewMoveInFromLeft(nextView:UIView!,aniTime:Float!,animoteKey:String!){
+        let animation:CATransition = CATransition()
+        animation.duration = CFTimeInterval(aniTime)
+        animation.type = "moveIn"
+        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
+        animation.subtype = "fromLeft"
+        animation.fillMode = "forwards"
+        nextView.layer.addAnimation(animation, forKey: animoteKey)
+    }
+    
+    func viewMoveInFromRight(nextView:UIView!,aniTime:Float!,animoteKey:String!){
+        let animation:CATransition = CATransition()
+        animation.duration = CFTimeInterval(aniTime)
+        animation.type = "moveIn"
+        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
+        animation.subtype = "fromRight"
+        animation.fillMode = "forwards"
+        nextView.layer.addAnimation(animation, forKey: animoteKey)
+    }
     
     @IBAction func leftSwipe(sender: UISwipeGestureRecognizer) {
+        viewMoveInFromRight(self.view.viewWithTag(2), aniTime: 0.2, animoteKey: "")
         if swipeKeyStyle == true {
             if j3keyType == 3 || j3brassType == 3 || j3nickelType == 3 {
                 j3keyType = 1; j3brassType = 1; j3nickelType = 1
@@ -49,6 +69,7 @@ class J3VC: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func rightSwipe(sender: UISwipeGestureRecognizer) {
+        viewMoveInFromLeft(self.view.viewWithTag(2), aniTime: 0.2, animoteKey: "")
         if swipeKeyStyle == true {
             if j3keyType == 1 || j3brassType == 1 || j3nickelType == 1 {
                 j3keyType = 3; j3brassType = 3; j3nickelType = 3
