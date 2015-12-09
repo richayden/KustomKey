@@ -191,26 +191,25 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     }
     func viewMoveInFromLeft(nextView:UIView!,aniTime:Float!,animoteKey:String!){
         let animation:CATransition = CATransition()
+        animation.type = kCATransitionPush
+        animation.subtype = kCATransitionFromLeft
         animation.duration = CFTimeInterval(aniTime)
-        animation.type = "moveIn"
-        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
-        animation.subtype = "fromLeft"
-        animation.fillMode = "forwards"
         nextView.layer.addAnimation(animation, forKey: animoteKey)
     }
     
     func viewMoveInFromRight(nextView:UIView!,aniTime:Float!,animoteKey:String!){
         let animation:CATransition = CATransition()
+        animation.type = kCATransitionPush
+        animation.subtype = kCATransitionFromRight
         animation.duration = CFTimeInterval(aniTime)
-        animation.type = "moveIn"
-        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
-        animation.subtype = "fromRight"
-        animation.fillMode = "forwards"
         nextView.layer.addAnimation(animation, forKey: animoteKey)
     }
     
     @IBAction func leftSwipe(sender: UISwipeGestureRecognizer) {
-        viewMoveInFromRight(self.view.viewWithTag(5), aniTime: 0.2, animoteKey: "")
+        viewMoveInFromRight(self.view.viewWithTag(5), aniTime: 0.1, animoteKey: "")
+        viewMoveInFromRight(lineOneLabel, aniTime: 0.1, animoteKey: "")
+        viewMoveInFromRight(lineTwoLabel, aniTime: 0.1, animoteKey: "")
+        viewMoveInFromRight(lineThreeLabel, aniTime: 0.1, animoteKey: "")
         if swipeKeyStyle == true {
             if keyType == 7 || brassType == 7 || nickelType == 7 {
                 keyType = 1; brassType = 1; nickelType = 1
@@ -225,7 +224,10 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
     }
     
     @IBAction func rightSwipe(sender: UISwipeGestureRecognizer) {
-        viewMoveInFromLeft(self.view.viewWithTag(5), aniTime: 0.2, animoteKey: "")
+        viewMoveInFromLeft(self.view.viewWithTag(5), aniTime: 0.1, animoteKey: "")
+        viewMoveInFromLeft(lineOneLabel, aniTime: 0.1, animoteKey: "")
+        viewMoveInFromLeft(lineTwoLabel, aniTime: 0.1, animoteKey: "")
+        viewMoveInFromLeft(lineThreeLabel, aniTime: 0.1, animoteKey: "")
         if swipeKeyStyle == true {
             if keyType == 1 || brassType == 1 || nickelType == 1 {
                 keyType = 7; brassType = 7; nickelType = 7
@@ -330,6 +332,23 @@ class DesignerVC: UIViewController, UITextFieldDelegate, UITabBarControllerDeleg
         switchStyle()
         colorCheck()
         self.view.viewWithTag(5)!.setNeedsDisplay()
+    }
+    
+    @IBAction func selectPressed(sender: AnyObject) {
+        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.dimsBackground = true
+        
+        let screenshot = self.view?.pb_takeSnapshot()
+        
+        //UIImagePNGRepresentation(screenshot!)
+        
+        UIImageJPEGRepresentation(screenshot!, 0.0)
+                
+        UIImageWriteToSavedPhotosAlbum(screenshot!, nil, nil, nil)
+        
+        PKHUD.sharedHUD.hide()
     }
     
     func style1FontSetup() {

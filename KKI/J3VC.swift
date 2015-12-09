@@ -27,7 +27,6 @@ class J3VC: UIViewController, UITabBarControllerDelegate {
         self.view.viewWithTag(2)!.setNeedsDisplay()
         print(j3keyType, j3BW, swipeKeyStyle)
 
-
         // Do any additional setup after loading the view.
     }
 
@@ -35,23 +34,20 @@ class J3VC: UIViewController, UITabBarControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func viewMoveInFromLeft(nextView:UIView!,aniTime:Float!,animoteKey:String!){
         let animation:CATransition = CATransition()
+        animation.type = kCATransitionPush
+        animation.subtype = kCATransitionFromLeft
         animation.duration = CFTimeInterval(aniTime)
-        animation.type = "moveIn"
-        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
-        animation.subtype = "fromLeft"
-        animation.fillMode = "forwards"
         nextView.layer.addAnimation(animation, forKey: animoteKey)
     }
     
     func viewMoveInFromRight(nextView:UIView!,aniTime:Float!,animoteKey:String!){
         let animation:CATransition = CATransition()
+        animation.type = kCATransitionPush
+        animation.subtype = kCATransitionFromRight
         animation.duration = CFTimeInterval(aniTime)
-        animation.type = "moveIn"
-        animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")
-        animation.subtype = "fromRight"
-        animation.fillMode = "forwards"
         nextView.layer.addAnimation(animation, forKey: animoteKey)
     }
     
